@@ -1,0 +1,92 @@
+<html>
+
+<head>
+  <title>Cairina | Login</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../static/css/miEstiloLogIn.css">
+  <link rel="shortcut icon" href="../static/img/favicon.png">
+  <script type="text/javascript" src="../static/js/LogIn.js"></script>
+</head>
+
+<body>
+  <div class="login-page">
+    <div class="row">
+      <!--<h1>Cairina Moschata</h1> -->
+      <form role="form" class="frm  animated flipInX" name="formularioLogin" action="hacerLogin" method="post">
+        <img src="../static/img/LogoConNombre.png" class="user-avatar">
+
+        <div class="form-content">
+
+          <div>
+
+            <input type="text" class="form-control input-underline input-lg" placeholder="Username" name="usuario">
+            <span class="error" id="errorusuario"></span>
+
+          </div>
+
+          <div>
+
+            <input type="password" class="form-control input-underline input-lg" placeholder="Password" name="clave">
+            <span class="error" id="errorClave"></span>
+
+          </div>
+
+        </div>
+
+        <div>
+          <p> </p>
+
+
+
+          <!--
+                <button type="submit" id="botonLogIn" onclick="return validar()" >Log in</button>
+                <a href="../html/registro.html" class="btn_registro"><h4>Registrarse</h4></a>
+                <button type="submit" id="botonRegistro">Registrate</button>-button >Registrase</button>
+              <a href="../html/registro.html" class="btn_registro">registrarse</a>-->
+
+          <button type="submit" id="botonLogIn" onclick="return validar()" >Log in</button>
+          <a href="{{url_for('main.register')}}" class=" btn_registro"><input type="button" value="Registrarse"></a>
+
+          <p> </p>
+        </div>
+
+        <a href="#" class="footer-links">Olvidé mi contraseña</a>
+
+      </form>
+    </div>
+
+
+
+    <div class="row">
+
+      <div class="container">
+
+        <p></p>
+
+        <div class="footer-links">
+
+          <a href="#">Terms of Use</a> |
+
+          <a href="#">Privacy Policy</a> |
+
+          <a href="#">Developers</a> |
+
+          <a href="#">Contact</a> |
+
+          <a href="#">About</a>
+
+        </div>
+
+        Copyright © Company - All rights reserved
+
+        <p></p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+
+</html>

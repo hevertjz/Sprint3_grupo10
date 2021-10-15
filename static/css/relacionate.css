@@ -1,0 +1,73 @@
+
+
+.nav_menu{
+    width: 90%;
+    height: 30px;
+    position: absolute;
+    top: 70px;
+    color: #460259;
+}
+
+.resultado_busqueda{
+    width: 40%;
+    height: 560px;
+    background-color: white;
+    position: relative; /*--estaba en absolute*/
+    left: 30%;
+    top: 130px;
+    padding: 20px; 
+    overflow: auto; /*averiguar que hace*/
+    border-radius: 2%;
+    text-align: center;
+    margin: 0px;
+    color: black;
+    font-size: 30px;
+}
+
+
+
+/*------------------------------------------------------------------- Scroll Personalizado -------------------------------*/
+
+.resultado_busqueda::-webkit-scrollbar {
+	width: 7px;
+}/*aqui se usa la propiedad de scroll*/
+
+.resultado_busqueda::-webkit-scrollbar-thumb {
+	background: #460259;
+	border-radius: 5px;
+}/*el scroll bar aparece con el thumb*/
+    
+
+
+
+
+.amigos{
+    width: 20%;
+    color: #460259;
+    position: absolute;
+    top: 60px;
+    left: 40%;
+    font-size: 30px;
+}/*este es el solo el texto*/
+
+
+/* ------------------------------------------------------------estilos div "footer"---------------------*/
+.footer{
+    
+    position: relative;
+    top: 160px;
+    height: 12%;
+    width: 100%;
+    left: 0%;
+    
+}
+
+.footer-links{
+    text-align: center;
+    position: relative;
+    top: 10%;
+    left: 35.8%;
+    width: 500px;
+    color: #460259;
+}
+

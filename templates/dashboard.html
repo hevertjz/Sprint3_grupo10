@@ -1,0 +1,181 @@
+<html>
+    <head>
+        <meta charset=" utf-8"/>
+        <title>Cairina Moschata</title>
+        <link rel="stylesheet" type="text/css" href="../static/css/myCSS.css"/>    
+        <link rel="shortcut icon"  href="../static/img/favicon.png"> 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js"></script>   
+    </head>
+
+    <body>
+        <div id="div0" class="container">
+
+            <div class="row">
+                <div class="form-group">
+                    <div id="div1">
+                        <h1>Perfiles</h1>            
+                        <p>Organizaciones</p>
+                        <p>Parejas</p>
+                        <p>Empresas</p>
+                        <p>Social</p>
+                        <p>Educativo</p>
+                    </div>
+                </div>
+
+                <div id="div1">
+            
+                    <h1>Región</h1>                
+                    <p>Pacífico</p>
+                    <p>Caribe</p>
+                    <p>Orinoquía</p>
+                    <p>Amazonía</p>
+                    <p>Andina</p>   
+                    <p>Insular</p>
+                
+                </div>
+
+                <div id="div1">
+                       
+                    <h1>Medios</h1>                
+                    <p>Videos</p>
+                    <p>Fotos</p>
+                    <p>Comentarios</p>
+                    <p>Blog´s</p>
+                    <p>Artículos</p> 
+                
+                </div>
+
+                <div class="inversion"> <!--id="div2"-->
+                    <h1>Inversión en publicidad</h1>
+                    <canvas id="myChart" width="180" height="100"></canvas>
+                    <script>
+                        var ctx= document.getElementById("myChart").getContext("2d");
+                        var myChart = new Chart(ctx,{
+                            type:"bar",
+                            data:{
+                                labels:["Marzo","Abril","Mayo","Junio"],
+                                datasets:[{
+                                    label: "Publicidad",
+                                    //Esto es un ejemplo de los datos//
+                                    data:[10,9,15,20],
+                                    backgroundColor: [
+                                    "rgb(70,2,89)",
+                                    "rgb(70,2,89",
+                                    "rgb(70,2,89",
+                                    "rgb(70,2,89"
+                                    ]
+                
+                                }]
+                            }
+                        });
+                    </script>
+                </div>
+
+                <div class="perfiles_creados"> <!--id="div2"-->
+                    <h1>Perfiles creados por mes</h1>
+                    <canvas id="myChart_2" width="180" height="100"></canvas>
+                    <script>
+                        var ctx= document.getElementById("myChart_2").getContext("2d");
+                        var myChart = new Chart(ctx,{
+                            type:"line",
+                            data:{
+                                labels:["Mayo","Junio","Julio","Agosto","Septiembre"],
+                                datasets:[{
+                                    label: "Perfiles",
+                                    //Esto es un ejemplo de los datos//
+                                    data:[16, 25, 45, 56, 88],
+                                    backgroundColor: [
+                                    "rgb(0,0,0)",
+                                    "rgb(100,100,100)",
+                                    "rgb(255,0,255)",
+                                    "rgb(255,255,0)",
+                                    "rgb(0,255,255)"
+                                    
+                                    ]
+                
+                                }]
+                            }
+                        });
+                    </script>
+                </div>
+
+                <div class="part_time"> <!--id="div2"-->
+                    <h1>Prime time</h1>
+                    <canvas id="myChart_3" width="180" height="100"></canvas>
+                    <script>
+                        var ctx= document.getElementById("myChart_3").getContext("2d");
+                        var myChart = new Chart(ctx,{
+                            type:"bubble",
+                            data:{
+                                labels:["6:00 P.M.","7:00 P.M.","8:00 P.M.","9:00 P.M.","10:00 P.M."],
+                                datasets:[{
+                                    label: "Perfiles",
+                                    //Esto es un ejemplo de los datos//
+                                    data:[{
+                                        x: 100,
+                                        y: 10,
+                                        r: 10
+                                        },{
+                                        x: 120,
+                                        y: 20,
+                                        r: 20
+                                        },{
+                                        x: 140,
+                                        y: 40,
+                                        r: 30
+                                        },{
+                                        x: 160,
+                                        y: 60,
+                                        r: 35
+                                        },{
+                                        x: 180,
+                                        y: 80,
+                                        r: 40
+                                        }],
+                                            
+                                    backgroundColor: [
+                                    "rgb(0,0,0)",
+                                    "rgb(100,100,100)",
+                                    "rgb(255,0,255)",
+                                    "rgb(255,255,0)",
+                                    "rgb(0,255,255)"
+                                    
+                                    ]
+                
+                                }]
+                            }
+                        });
+                    </script>
+                </div>
+            </div>
+            <form name="top_profiles">
+                <h1>Top 20 perfiles</h1>
+                <input type="text" name="Nombre">
+                <input type="text" name="Nombre">
+                <input type="text" name="Nombre">
+                <input type="text" name="Nombre">
+                <input type="text" name="Nombre">
+                <input type="text" name="Nombre">
+                <input type="text" name="Nombre">
+                <input type="text" name="Nombre">
+                <input type="text" name="Nombre">
+                <input type="text" name="Nombre">
+
+            </form>
+            <form name="stadistics">
+                <p>Total Usuarios</p>
+                <input type="text" name="Nombre">
+                <p>Total páginas comerciales</p>
+                <input type="text" name="Nombre">
+                <p>Actualizaciones</p>
+                <input type="text" name="Nombre">
+                <p>Descarga contenido</p>
+                <input type="text" name="Nombre">
+               
+                
+            </form>
+        </div>
+
+    </body>
+   
+</html>

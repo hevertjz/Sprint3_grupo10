@@ -1,0 +1,84 @@
+<html>
+    <head> 
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/post.css') }}">
+        <title> username V (@username)| Fotos y videos de Cairina Moschata </title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" media="screen" href="../static/css/feed.css" />
+        <link rel="stylesheet" href="../static/fontawasome/css/all.min.css">
+        <script src="https://kit.fontawesome.com/25598d9e09.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <div class ="barra_estado"> 
+            <div class="wrapper">
+                <div class="search-input">
+                    <a href="" target="_blank" hidden></a>
+                    <input type="text" placeholder="¿buscas a alguien? Escribe su nombre aquí">
+                    <div class="autocom_box">
+                    
+                    </div>
+                    <div class="icon"> <a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i></a>
+                    </div>
+                    <!--<div class="icon"><i class="fas fa-search"></i></div>-->
+                </div>
+    
+            </div>
+            <div class="nav_menu">
+                <a href="{{url_for('main.feed')}}">Inicio</a> | 
+        
+                <a href="{{url_for('main.mi_espacio')}}">Mi Espacio</a> |   
+        
+                <a href="{{url_for('main.explorar')}}">Explorar</a> | 
+        
+                <a href="{{url_for('main.relacionate')}}">Relacionate</a>
+        
+            </div>
+
+            <h2 class="icon_text">Cairina Moschata</h2> <!--cambiar imagen a una con icono y letras-->
+            <a href="{{url_for('main.feed')}}" > <img src="../static/img/icon_cairina.jpg" class="btn_icon" alt="icono de cairina"></a>
+            <a href="{{url_for('main.notificaciones')}}" class="btn_notification"><i class="fas fa-bell"></i></a>
+            <a href="{{url_for('main.index')}}" class="btn_logout"><i class="fas fa-sign-out-alt"></i></a>
+            <a href="{{url_for('main.mensajes')}}" class="btn_message"> <i class="fas fa-envelope"></i></a>
+            <a href="{{url_for('main.perfil_user')}}" class="btn_user"><i class=" fas fa-user-circle"></i></i></a>
+             <!-- En el div barra_estado se usan anchors en forma de botones para utilizar iconos de fontawesome
+            es necesario tener las carpetas "svgs y webfonts" dentro del proyecto para que funcionen y utilizar un link como 
+            se muestra en la linea 10 .....En la clase wrapper se encuenta todo lo relacionado a la barra de busqueda-->
+          
+        </div>
+
+         <h5> Inicio |> Perfil |> Crear nuevo post </h5> 
+
+         <div class="crearpost">   
+         <h2 id="titcrear"> Crea un nuevo post</h2> 
+         <img id="insertimg" src="{{ url_for('static', filename='img/insertimage.png') }}" width="200" height="150">
+        </div>
+
+         <div class="identuser">
+            <img src="{{ url_for('static', filename='img/insert photo1.jpg') }}" width="70" height="50"> Nombre de usuario: <style width="380px"; heigh="25px"> </style>
+        </div>
+
+         <div class=" etiquetar"> 
+             <hr id="lineal">
+             <h4 id="etiper">Etiquetar personas</h4>
+             <img id="etiquet" src="{{ url_for('static', filename='img/etiquetar.png') }}" width="70" height="50"> <style width="380px"; heigh="25px"> </style>
+        </div>
+
+        <div class="ubicar"> 
+            <hr id="lineal1">
+            <h4 id="ubica">Usar localización</h4>
+            <img id="ubic" src="{{ url_for('static', filename='img/localizar.png') }}" width="70" height="50"> <style width="380px"; heigh="25px"> </style>
+        </div>
+
+        <div class="reaccionar"> 
+            <hr id="lineal2">
+            <h4 id="reaciona">Reacciones</h4>
+            <p> &#128512; &#128512; &#128148; &#128077;&#128514;&#128521;&#128525;&#128557;&#128536;&#128544; <style width= "90px"; height= "60px"; color= "yellow">  </style></p>
+        </div>
+
+        <div class="textoComentario">
+            <textarea name="mitextarea" id="mitextarea" cols="100" rows="7" style="resize: both;">Agrega aquí tu comentario</textarea>
+        </div>
+            <button type="submit" value="Crear"> Crear </button>
+    </body>
+  
+</html>

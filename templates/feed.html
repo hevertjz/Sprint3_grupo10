@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="sp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cairina Moschata</title>
+    <link rel="shortcut icon"  href="../static/img/favicon.png">
+    <link rel="stylesheet" type="text/css" media="screen" href="../static/css/feed.css" />
+    <link rel="stylesheet" href="../static/fontawasome/css/all.min.css">
+</head>
+<body>
+    <div class ="barra_estado"> 
+        <div class="wrapper">
+            <div class="search-input">
+                <a href="" target="_blank" hidden></a>
+                <input type="text" placeholder="¿buscas a alguien? Escribe su nombre aquí">
+                <div class="autocom_box">
+                
+                </div>
+                <div class="icon"> <a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i></a>
+                </div>
+                <!--<div class="icon"><i class="fas fa-search"></i></div>-->
+            </div>
+
+        </div>
+        <h2 class="icon_text">Cairina Moschata</h2> <!--cambiar imagen a una con icono y letras-->
+        <a href="{{url_for('main.feed')}}" > <img src="../static/img/icon_cairina.jpg" class="btn_icon" alt="icono de cairina"></a>
+        <a href="{{url_for('main.notificaciones')}}" class="btn_notification"><i class="fas fa-bell"></i></a>
+        <a href="{{url_for('main.index')}}" class="btn_logout"><i class="fas fa-sign-out-alt"></i></a>
+        <a href="{{url_for('main.mensajes')}}" class="btn_message"> <i class="fas fa-envelope"></i></a>
+        <a href="{{url_for('main.perfil_user')}}" class="btn_user"><i class=" fas fa-user-circle"></i></i></a>
+         <!-- En el div barra_estado se usan anchors en forma de botones para utilizar iconos de fontawesome
+        es necesario tener las carpetas "svgs y webfonts" dentro del proyecto para que funcionen y utilizar un link como 
+        se muestra en la linea 10 .....En la clase wrapper se encuenta todo lo relacionado a la barra de busqueda-->
+      
+    </div>
+    <div class ="titulo">
+        <h1 class="feed_title">Usuario, ¿A dónde vamos? </h1>
+    </div>
+    
+    
+    
+    <div class="contenido">
+         <!-- se utilizan 4 divs dentro de contenido, que a su vez contienen las imagenes para poder darles estilos de manera 
+        eficiente.... se utilizan anchors como botones para linkear otras vistas -->
+        
+        <div class="square_post">
+            <img class="img_post" src="../static/img/nuevo_post.jpg" alt="imagen de una persona fotofrageando a su perro">
+            <a href="{{url_for('main.post')}}" class="btn_link"><h4>Nuevo Post</h4></a>
+        </div>
+        <div class="square_explore">
+            <img class="img_explore" src="../static/img/explorar.jpg" alt="foto de personas viendo el celular">
+            <a href="{{url_for('main.explorar')}}" class="btn_link" ><h4>Explorar</h4></a>
+        </div>
+        <div class="square_space">
+            <img class="img_space" src="../static/img/mi_espacio.jpg" alt="foto de amigos reunidos">
+            <a href="{{url_for('main.mi_espacio')}}" class="btn_link"><h4>Mi Espacio</h4></a>
+        </div>
+        <div class="square_connect">
+            <img class="img_connect" src="../static/img/relacionate.jpg" alt="foto de personas conociendose">
+            <a href="{{url_for('main.relacionate')}}" class="btn_link"><h4>Relacionate</h4></a>
+        </div>
+    </div>
+
+    <div class="footer">
+                <div class="footer-links">
+  
+                  <a href="#">Terms of Use</a> | 
+  
+                  <a href="#">Privacy Policy</a> | 
+  
+                  <a href="#">Developers</a> | 
+  
+                  <a href="#">Contact</a> | 
+  
+                  <a href="#">About</a>
+                  <h3>Copyright © Company - All rights reserved</h3>
+                </div>   
+                
+                       
+  
+
+    </div>
+
+    <Script src="../static/js/feed.js"></Script>
+    <Script>src="../static/js/susggestions.js"</Script>
+
+
+
+</body>
+</html>

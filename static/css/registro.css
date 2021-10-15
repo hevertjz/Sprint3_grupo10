@@ -1,0 +1,95 @@
+h1{
+    color: #270140;
+    text-align: center;
+    background-color: lightgray;
+    font-family: serif;
+}
+
+img{
+    padding: 170px 170px;
+    align-items: center;
+}
+
+form{
+    width: 350px;
+    padding: 16px;
+    border-radius: 10px;
+    margin: auto;
+    background-color: #C991D8;
+}
+
+form button{
+    text-align: center;
+    font-weight: bold;
+    align-items: center;
+}
+
+form input{
+    border: 1px solid #460259;
+    border-radius: 3px;
+    padding: 11px 11px;
+    margin: 8px 10px;
+}
+
+label {
+    color: #270140;
+    cursor: default;
+    font-weight: 600;
+    vertical-align: middle;
+}
+
+.error
+{
+    color: #D8000C;
+    background-color: #FFBABA;
+}
+
+.encabezado{
+    background-color: #EDEDED;
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
+
+.sexo {
+    color: #270140;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 18px;
+    padding: 0 10px 0 3px;
+}
+
+._5k_2 {
+    background-color: #fff;
+    border: 1px solid #ccd0d5;
+    box-sizing: border-box;
+    display: inline-block;
+    flex: 1 0 auto;
+    font-weight: normal;
+    height: 36px;
+    margin: 8px 6px 6px;
+    padding: 0;
+    position: relative;
+    width: auto;
+}
+
+._58mu ._58mv {
+    color: #270140;
+    font-size: 11px;
+    width: 316px;
+    text-align: justify;
+}
+
+.botonRegistro {
+    text-align: center;
+    font-weight: bold;
+    border: none;
+    color: #270140;
+    
+}
+
+.enviar_registro{
+    color: #270140;
+    font-weight: bold;
+}
+/*PENDIENTE POR DARLE ESTILOS AL BOTON REGISTRARSE*/

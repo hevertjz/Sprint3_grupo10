@@ -1,0 +1,139 @@
+div {
+    display: block;
+}
+
+form{
+    width: 450px;
+    padding: 16px;
+    border-radius: 10px;
+    margin:auto;
+    background-color: #e4d4c8c2;
+}
+
+button{
+    text-align: center;
+    font-weight: bold;
+    background-color: #C991D8;
+    border: none;
+    padding: 10px 10px;
+}
+
+.btn_registro {
+    height: 100%;
+    width: 88.17px;
+    background-color: #c991d8;
+    text-align: center;
+    text-decoration: none;
+    color: #270140;
+    font-size: 17px;
+    padding: 8px 8px;
+    font-weight: bold;
+    
+     
+}
+
+.btn_login {
+    height: 100%;
+    width: 88.17px;
+    background-color: #c991d8;
+    text-align: center;
+    text-decoration: none;
+    color: #270140;
+    font-size: 17px;
+    padding: 8px 8px;
+    font-weight: bold;
+}
+input{
+    background-color: #C991D8;
+}
+
+
+form input{
+    align-items: center;
+    border: 1px solid #C991D8;
+    border-radius: 3px;
+    padding-left: 10px;
+    margin: 10px;
+}
+
+/*form img{
+    align-content: center;
+    padding-left: 140px;
+}*/
+
+img{
+    max-width: 100%;
+    vertical-align: middle;
+    border: 0;
+}
+
+p{
+    align-items: center;
+}
+
+.user-avatar {
+    width: 240px;
+    height: 240px;
+}
+
+a{
+    color: #270140;
+}
+
+.login-page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+    background: url(../img/fondo3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    color: black;
+    padding: 3em;
+    overflow-x: hidden;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.login-page .form-content .input-underline {
+    background: 0 0;
+    border: none;
+    box-shadow: none;
+    border-bottom: 2px solid rgba(255,255,255,.4);
+    color: #270140;
+    border-radius: 0;
+
+}
+
+.login-page .input-lg {
+    height: 46px;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.3333333;
+    border-radius: 10px;
+}
+
+.footer-links a {
+    color: #270140;
+}
+

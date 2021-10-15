@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <title>Formulario de registro</title>
+        <meta charset="UTF-8">
+
+        <!--<script type="text/javascript" src="js/funciones.js"></script>-->
+        <link rel="stylesheet" type="text/css" href="../static/css/registro.css">
+        <link rel="shortcut icon"  href="../static/img/favicon.png">
+    </head>
+
+    <body>
+        
+
+        <form name="formularioRegistro" method="GET" action="">
+            <!--  GET hace referencia al método HTML con el que se enviará el formulario, action es lo que  
+            se ejecutará cuando se envíe el formulario -->
+            <div class="encabezado">
+                <h1>Crea tu cuenta</h1>
+            </div>
+
+            <div class="input-group">
+                <p>
+                    <input type="text" name="nombre" placeholder="Nombres">
+                    <span class="error" id="errorNombre"></span>
+                    <input type="text" name="apellido" placeholder="Apellidos">
+                    <span class="error" id="errorApellido"></span>
+                </p>
+            </div>
+
+
+            <div>
+                <p>
+                    <input type="text" name="correo" placeholder="Correo Electrónico"><span class="error" id="errorMail"></span>
+                </p>
+            </div>
+
+            <div>
+                <p>
+                    <input type="password" name="clave" placeholder="Contraseña"><span class="error" id="errorPassword"></span>
+                </p>
+            </div>
+
+            <div>
+                <div class="mtm mbs _2_68">
+                    Fecha de nacimiento
+                    <a class="_58ms mlm" id="birthday-help" href="#" title="Haz clic para obtener más información" role="button">
+                        <i class="img sp_98fCI7IVTTz sx_c4643a"></i>
+                    </a>
+                </div>
+                <div>
+                    <input type="date" name="cumpleaños" placeholder="Fecha de nacimiento" >
+                </div>
+            </div>
+
+            <div>
+                <div class="mtm mbs _2_68">
+                    Sexo
+                    <a class="_58ms mlm" aria-label="" id="gender-help" title="Haz clic para obtener más información" href="#" role="button">
+                        <i class="img sp_98fCI7IVTTz sx_c4643a"></i>
+                    </a>
+                </div>
+                <span class="_5k_3" data-type="radio" data-name="gender_wrapper" id="u_2o_o_4I">
+                    <span class="_5k_2 _5dba">
+                        <label class="sexo" for="u_2o_4_Bs">Mujer</label>
+                        <input type="radio" class="_8esa" name="sex" value="1" id="u_2o_4_Bs">
+                    </span>
+                    <span class="_5k_2 _5dba">
+                        <label class="sexo" for="u_2o_5_vp">Hombre</label>
+                        <input type="radio" class="_8esa" name="sex" value="2" id="u_2o_5_vp">
+                    </span>
+                </span>
+            </div>
+
+            <div class="_58mu" data-nocookies="1" id="u_2o_r_3p">
+                <p class="_58mv">
+                    Al hacer clic en "Registrarte", aceptas nuestras <a href="/legal/terms/update" id="terms-link" target="_blank" rel="nofollow">Condiciones</a>, la <a href="/about/privacy/update" id="privacy-link" target="_blank" rel="nofollow">Política de datos</a> y la <a href="/policies/cookies/" id="cookie-use-link" target="_blank" rel="nofollow">Política de cookies</a>. Es posible que te enviemos notificaciones por SMS, que puedes desactivar cuando quieras.
+                </p>
+            </div>
+
+            
+            <div class="botonRegistro">
+                <a href="{{url_for('main.index')}}" class="enviar_registro"><input type="button" value="Registrarte"></a>
+            </div>
+
+            <!--  Esto es un comentario en HTML   -->
+
+        </form>
+    </body>
+    
+</html>
