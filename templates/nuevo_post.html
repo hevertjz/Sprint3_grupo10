@@ -6,6 +6,8 @@
         <link rel="stylesheet" type="text/css" media="screen" href="../static/css/feed.css" />
         <link rel="stylesheet" href="../static/fontawasome/css/all.min.css">
         <script src="https://kit.fontawesome.com/25598d9e09.js" crossorigin="anonymous"></script>
+        <link rel="shortcut icon"  href="../static/img/favicon.png"> 
+
     </head>
 
     <body>
@@ -44,35 +46,40 @@
             se muestra en la linea 10 .....En la clase wrapper se encuenta todo lo relacionado a la barra de busqueda-->
           
         </div>
+        <br>
+        <br>
 
-         <h5> Inicio |> Perfil |> Crear nuevo post </h5> 
-
-         <div class="crearpost">   
-         <h2 id="titcrear"> Crea un nuevo post</h2> 
-         <img id="insertimg" src="{{ url_for('static', filename='img/insertimage.png') }}" width="200" height="150">
+        <div>
+            <h4 id=mapa> 
+            <a href="/feed/">Inicio </a>
+            <a href="/user_profile/">Perfil  </a>
+            <a href="/user_profile/">Editar  </a>
+            <a href="/new_post/">Nuevo post  </a></h4>
+            <h2 id="titcrear"> Crear nuevo post</h2> 
         </div>
 
-         <div class="identuser">
-            <img src="{{ url_for('static', filename='img/insert photo1.jpg') }}" width="70" height="50"> Nombre de usuario: <style width="380px"; heigh="25px"> </style>
+        <div class="h2opciones"> 
+            <div class="hlargo">
+                <h3><a href="/user_profile/" class="user_photo"><i id= us1 class="fas fa-user-circle" ></i> Nombre de usuario </a> </h3>       
+            </div>
         </div>
 
-         <div class=" etiquetar"> 
-             <hr id="lineal">
-             <h4 id="etiper">Etiquetar personas</h4>
-             <img id="etiquet" src="{{ url_for('static', filename='img/etiquetar.png') }}" width="70" height="50"> <style width="380px"; heigh="25px"> </style>
-        </div>
+        <div class=" etiquetar"> 
+            <hr id="lineal">
+            <h3><a href="/new_post/" class="etiq"> Etiquetar amigos <i id="etiquet" class="fas fa-user-tag"></i> </a></h3>
+        
+       </div>
 
-        <div class="ubicar"> 
-            <hr id="lineal1">
-            <h4 id="ubica">Usar localización</h4>
-            <img id="ubic" src="{{ url_for('static', filename='img/localizar.png') }}" width="70" height="50"> <style width="380px"; heigh="25px"> </style>
-        </div>
+       <div class="ubicar"> 
+           <hr id="lineal1">
+           <h3><a href="/new_post/" class="ubi"> Usar ubicación <i id="ubica" class="fas fa-map-marker-alt"></i></h3>
+       </div>
 
-        <div class="reaccionar"> 
-            <hr id="lineal2">
-            <h4 id="reaciona">Reacciones</h4>
-            <p> &#128512; &#128512; &#128148; &#128077;&#128514;&#128521;&#128525;&#128557;&#128536;&#128544; <style width= "90px"; height= "60px"; color= "yellow">  </style></p>
-        </div>
+       <div class="ubicar1">
+           <hr id="lineal2">
+       </div>
+
+        <input type="submit" name="crear" value= "Crear" style="width: 80px; height: 40px; color:whitesmoke; background-color: #460259;"/>
 
         <div class="textoComentario">
             <textarea name="mitextarea" id="mitextarea" cols="100" rows="7" style="resize: both;">Agrega aquí tu comentario</textarea>
