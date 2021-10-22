@@ -78,6 +78,10 @@ def perfil_user():
 def newpass():
     return render_template('cambPassword.html')
 
+@main.route('/admin_profile/')
+def admin_profile():
+    return render_template('admin_profile.html')
+
 
 @main.route('/suggestions/')
 def relacionate():
