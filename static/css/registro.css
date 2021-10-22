@@ -11,7 +11,7 @@ img{
 }
 
 form{
-    width: 350px;
+    width: 440px;
     padding: 16px;
     border-radius: 10px;
     margin: auto;
@@ -29,6 +29,10 @@ form input{
     border-radius: 3px;
     padding: 11px 11px;
     margin: 8px 10px;
+}
+
+.correo{
+    width: 410px;
 }
 
 label {
@@ -76,7 +80,7 @@ label {
 ._58mu ._58mv {
     color: #270140;
     font-size: 11px;
-    width: 316px;
+    width: 410px;
     text-align: justify;
 }
 
@@ -84,11 +88,13 @@ label {
     text-align: center;
     font-weight: bold;
     border: none;
-    color: #270140;
+    background-color: #270140;
+    color: #EDEDED;
     
 }
 
 .enviar_registro{
+    text-align: center;
     color: #270140;
     font-weight: bold;
 }
