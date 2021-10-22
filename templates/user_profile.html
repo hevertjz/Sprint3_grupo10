@@ -53,13 +53,21 @@
             se muestra en la linea 10 .....En la clase wrapper se encuenta todo lo relacionado a la barra de busqueda-->
           
         </div>
-            <!--<h6 id=mapa> Inicio |> Perfil |> Editar perfil </h6>-->
-            <table class="tabla"> 
+        <br>
+        <br>
+        <br>
+        <br>
+        <div>
+            <h4 id=mapa> 
+            <a href="/feed/">Inicio </a>
+            <a href="/admin_profile/">Perfil  </a>
+            <a href="/user_profile/">Editar  </a> </h4>
+            <table>
                 <thead>
                     <tr>
-                        <td>0000</td>
-                        <td>0000</td>
-                        <td>0000</td>
+                        <td>00</td>
+                        <td>00</td>
+                        <td>00</td>
                     </tr>
                 </thead>
                 <td> Publicaciones </td>
@@ -69,54 +77,44 @@
         </div>
 
         <div class="h2opciones"> 
-
             <div class="hlargo">
-                <h3><img src="{{ url_for('static', filename='img/insert photo1.jpg') }}" width="130" height="100"> 
-                    <p style="position: img/down; text-align: down; font-size: medium; font-weight: bold; "> </p> </h3>   
+                <h3><a href="/user_profile/" class="user_photo"><i id= us1 class="fas fa-user-circle" ></i> Nombre de usuario </a> 
+                </h3>       
             </div>
 
             <div class="textoPerfil">
-                <textarea name="mitextarea" id="mitextarea" cols="100" rows="7" style="resize: both;">Aquí descripción</textarea>
+                <textarea name="Biografía" cols="80" rows="6" style="resize: both;">Aquí puedes editar tu biografía</textarea>
             </div>
-
-        </div >
-
-        <div class="texto_foto">
-            <h6>Foto de perfil</h6>
-
         </div>
-        <div class="texto_usuario">
-            <h6>Nombre de usuario</h6>
+        <a href="/user_profile/" class="Edit_Dat"><input type="submit" name=Edit_Text value="Editar datos personales" /> </a> 
 
-        </div>
-
-       
-        <button id=btnEditText type="submit">Editar tu descripción</button>
-        <h4> Configuración general </h4>
         <div class="contenedor"> 
             <div id="div3">
-                <img src="{{ url_for('static', filename='img/insert photo1.jpg') }}" width="50" height="50"><button>Editar foto </button> 
-                <p style=" text-align: right; font-size: small; color: gray; "> Formato jpg máx. 6MB</p> 
+                <a href="/user_profile/" class="photo_change"><i id= ch class="far fa-user-circle"></i></a>
+                <input type="file" name="archivo"/>
+                <input type="hidden" name="escondido"/>
+                <p type="text" name="Editar foto" name= " Formato jpg máx. 6MB"   style= "color: gray; text-align: right" > </p>
+                
             </div>
+
             <form name="perfilUsuario" method="POST" action=""> 
-                <p>  Nombre completo <input id="nom" type="tex" name="nombre" style="width: 380px; height: 25px;">   
-                <p> Nombre de usuario: <input type= "text" name="username" id="username" style="width: 380px; height: 25px;">  </p>    
-                <p> Genero: <input type="radio" name="genero" value ="F"/> mujer
-                            <input type="radio" name="sexo" value="M" /> hombre
-                            <input type="radio" name="sexo" value="O" /> otro</p>
-                <p> Fecha de nacimiento <input type="date" name="date">   </p>   
-                <p>  Nacionalidad: <input type="text" name="text"> </p>
-                <p>Correo: <input type="tex" name="correo" style="width: 330px; height: 20px;"/> </p>
-                <p>Contraseña: <input type="password" name="password" style="width: 230px; height: 20px;"> </p>
-                <p> Telefono: <input type="number" name= "number">     Organización: <input type="text" name="text">  </p>
-                <p> Cambiar tipo de cuemta: <select><option>Personal</option><option>Empresarial</option></select>  </p>
+                <p>Nombre completo <input id="nom" type="tex" name="nombre" style="width: 380px; height: 35px;">   
+                <p>Nombre de usuario: <input type= "text" name="username" id="username" style="width: 380px; height: 35px;">  </p>    
+                <p>Sexo: <input type="radio" name="genero" value ="F"/> mujer
+                         <input type="radio" name="sexo" value="M" /> hombre</p>
+                <p>Fecha de nacimiento <input type="date" name="date" style="width: 230px; height: 35px;">Nacionalidad:<select> <option>Colombiana</option><option>Afgana</option> <option>Albanesa</option> <option>Argentina</option> <option>Belga</option> <option>Boliviana</option> <option>Brasileña</option><option>Canadiense</option><option>Chilena</option><option>Danesa</option><option>Española</option><option>Estadounidense</option><option>Francesa</option><option>Guatemalteca</option><option>Hondureña</option><option>Indonesa</option> </select> <style width="230px"; height= "35px";></style> </p>
+                <p>Correo: <input type="tex" name="correo" style="width: 330px; height: 35px;"/> </p>
+                <p>Telefono: <input type="number" name= "number"style="width: 230px; height: 35px;">     Organización: <input type="text" name="text" style="width: 230px; height: 35px;">  </p>
+                <p>Cambiar tipo de cuemta: <select><option>Personal</option><option>Empresarial</option></select> <style width=260px; heigh=35px;></style> </p>
 
                 <button type="submit" value="Enviar"> Enviar </button>
-            </form>    
+            </form> 
+            <a href="/new_password/" class="Edit_Cont"> <button id=btnEditText type="submit"> Cambia tu contraseña</button></a>
+   
         </div> 
-        <script src="../static/js/buscador.js"> </script>
     </body>
-    <script src="js/profile.js"> </script>
+
+    <script src="js/user_profile.js"> </script>
 
 
 </html>
