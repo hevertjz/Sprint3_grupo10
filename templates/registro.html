@@ -3,7 +3,7 @@
         <title>Formulario de registro</title>
         <meta charset="UTF-8">
 
-        <!--<script type="text/javascript" src="js/funciones.js"></script>-->
+        <script type="text/javascript" src="{{url_for('static', filename='js/registro.js')}}"></script>
         <link rel="stylesheet" type="text/css" href="../static/css/registro.css">
         <link rel="shortcut icon"  href="../static/img/favicon.png">
     </head>
@@ -30,13 +30,25 @@
 
             <div>
                 <p>
-                    <input type="text" name="correo" placeholder="Correo Electrónico"><span class="error" id="errorMail"></span>
+                    <input type="text" class="correo" name="correo" placeholder="Correo Electrónico" width="375px"><span class="error" id="errorMail"></span>
                 </p>
             </div>
 
             <div>
                 <p>
-                    <input type="password" name="clave" placeholder="Contraseña"><span class="error" id="errorPassword"></span>
+                    <input type="text" class="correo" name="comprobar_correo" placeholder="Confirme Correo Electrónico" width="375px"><span class="error" id="errorComprobarMail"></span>
+                </p>
+            </div>
+
+            <div>
+                <p>
+                    <input type="text" name="usuario" placeholder="usuario"><span class="error" id="errorusuario"></span>
+                </p>
+            </div>
+
+            <div>
+                <p>
+                    <input type="password" name="clave" placeholder="Contraseña"><span class="error" id="errorClave"></span>
                 </p>
             </div>
 
@@ -78,8 +90,8 @@
             </div>
 
             
-            <div class="botonRegistro">
-                <a href="{{url_for('main.index')}}" class="enviar_registro"><input type="button" value="Registrarte"></a>
+            <div class="enviar_registro">
+                <a href="{{url_for('main.index')}}" class="enviar_registro"><input type="button" class="botonRegistro" value="Registrarte" onclick="return validar()"></a>
             </div>
 
             <!--  Esto es un comentario en HTML   -->
