@@ -1,11 +1,70 @@
+.barra_estado{
+    
+    width: 100%;
+    height: 60px;
+    background-color: #460259;
+    position: absolute; /*sobre el el body*/
+    top: 0%;
+    left: 0%;
+    
+}
+.btn_icon{
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    left: 1%;
+    top: 4px;
+    border-radius: 10%;
+}
+
+.icon_text{
+    position: absolute;
+    left: 5%;
+    color: #ededed;
+    top: -2px;
+}
+.btn_post{
+    position: absolute;
+    right: 10%;
+    top: 5px;
+    cursor: pointer;
+    padding: 5px 1px;
+    font-size:35px;
+    text-align: center;
+    color: #ededed;
+}
+.btn_user{
+    position: absolute;
+    right: 1%;
+    top: 5px;
+    cursor: pointer;
+    padding: 5px 1px;
+    font-size:35px;
+    text-align: center;
+    color: #ededed;
+    
+}
+
+.btn_logout{
+    position: absolute;
+    right: 10%;
+    top: 5px;
+    cursor: pointer;
+    padding: 5px 1px;
+    font-size:35px;
+    text-align: center;
+    color: #ededed;
+
+}
 .h1logo
 {
     font-family:"times";
-    font-size:small;
-    color: #C991D8 ;
-    background-color: #270140;
+    color:#460259;
+    background-color: whitesmoke;
     width: 100%;
-    height: 70px;  
+    height: 60px;  
+    top: 0;
+    left: 0;
 }
 .h2opciones
 {
@@ -15,17 +74,15 @@
     text-decoration: underline;
     color: #C991D8 ;
     background-color: white;  
-    position: absolute;/*evert*/
-    top: 130px;/*evert*/
 }
 table
 {
-    /*margin-left: 800; comantado evert*/
+    margin-left: 800;
     border-collapse: collapse;
     text-align-last: right;
     table-layout: right;
     color: white;
-    background-color: #270140;
+    background-color: #460259;
     font-size: 20;
     font-weight: bold;   
 }
@@ -39,38 +96,39 @@ th,td{
     width: 25%;
     height:130px ;  
 }
+#us{
+    font-size: 150px;  
+}
+#lineal
+{
+    border-width:1px;
+    border-style:dotted;
+    border-color:#460259;
+    width:100%;
+}
 .textoPerfil{
-    width:50% ;
-    height:130px ;
-    text-align: justify;
-    border-radius: 5;
-    color: #C991D8;
+    text-align: center;
+    border-radius: 10;
+    color:#270140;
+    font-weight:bold;
 }
 .hlargo,.textoPerfil{
     display: inline-block;
 }
-#btnEditText{
-    /*margin-left: 650; sara --- camibio evert*/
-    position: absolute; /*evert*/
-    top:300px;/*evert*/
-    left: 32%;
+.Edit_Dat{
+   width: 150px;
+   height: 130px;
+   margin: 26rem;
+   padding: 26rem;
+   text-align: center;
 }
 h3
 {
-    font-family: 'sans serif';
-    text-align:inherit;
-    color: #460259;
-    background-color: white
-}
-h4
-{  
-    font-family: 'sans serif';
     text-align:center;
-    font-size: medium;
-    font-weight: bold;
-    padding-inline-end: 0%;
-    color: #460259 ;
-    background-color: white
+    color: #460259;
+}
+#us1{
+    font-size: 100px;  
 }
 h5
 {  
@@ -88,74 +146,51 @@ h5
     text-decoration:wavy;
     width: 15%;
 }
+#ch{
+    font-size: 60px;
+    text-align: initial;
+    color:beige
+}
 #div3,#nom{
     display: inline-block;
 }
 .contenedor
 {
-    background-color: #270140;
-    width:860px;
-    border: radius 50px; 
+    background-color:#460259;
+    width: 800px;
+    height: 650px;
+    border-radius: 50px; 
     margin: auto;
-    position: absolute;
-    top:450px;
-    left: 12.5%;
-
+}
+#change{
+    font-size: 110px;
+    background-color: #C991D8;
 }
 form
 {
-    width: 560px;
+    width: 650px;
+    height: 350px;
     padding: 30px;
     padding-right: 21px;
     padding-left: 40px;
-    padding-inline-end: 30px;
+    padding-inline-end: 40px;
     border: 18px;
     margin:auto;
     background: #C991D8;
-    color:#270140;
-    font-family: sans-serif;
+    color:#460259;
     font-weight: bold;
-    border-radius: 5px;
+    border-radius: 30px;
 }
-button
+.buttoned
 {
     text-align: center;
     font-weight: bold;
-}
-fore input
-{
-    border-radius: 3px;
-    padding-top: 3px;
-    padding-left: 3px;        
-    margin-top: 2px;
-    margin-left: 3px;
-}
 
-
-/*inicia edicion evert*/
-
-.tabla{
-    position: absolute;
-    top: 10%;
-    left: 70%;
 }
-
-.texto_foto{
-    position: absolute;
-    color:#270140;
-    left: 2.8%;
-    top: 226px;
-    text-decoration: none;
-    
-}
-
-.texto_usuario{
-    position: absolute;
-    color:#270140;
-    left: 1.6%;
-    top: 250px;
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: bold;
-    
-}
+.Edit_Cont{
+    width: 150px;
+    height: 130px;
+    margin: 15rem;
+    padding: 15rem;
+    text-align: center;
+ }
