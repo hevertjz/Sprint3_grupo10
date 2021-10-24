@@ -2,16 +2,16 @@
     <head>
         <title>Formulario de registro</title>
         <meta charset="UTF-8">
-
-        <script type="text/javascript" src="{{url_for('static', filename='js/registro.js')}}"></script>
         <link rel="stylesheet" type="text/css" href="../static/css/registro.css">
         <link rel="shortcut icon"  href="../static/img/favicon.png">
+        <script src="../static/js/registro.js"></script>
+        
     </head>
 
     <body>
         
 
-        <form name="formularioRegistro" method="GET" action="">
+        <form name="formularioRegistro" method="POST" action=""> <!-- en action puede ir "funcion register"se deberia implementar post  "estaba en GET"-->
             <!--  GET hace referencia al método HTML con el que se enviará el formulario, action es lo que  
             se ejecutará cuando se envíe el formulario -->
             <div class="encabezado">
@@ -71,14 +71,14 @@
                         <i class="img sp_98fCI7IVTTz sx_c4643a"></i>
                     </a>
                 </div>
-                <span class="_5k_3" data-type="radio" data-name="gender_wrapper" id="u_2o_o_4I">
+                <span class="_5k_3" data-type="radio" data-name="gender_wrapper" id="u_2o_o_4I">        
                     <span class="_5k_2 _5dba">
                         <label class="sexo" for="u_2o_4_Bs">Mujer</label>
-                        <input type="radio" class="_8esa" name="sex" value="1" id="u_2o_4_Bs">
+                        <input type="radio" class="_8esa" name="femenino" value="mujer" id="u_2o_4_Bs">
                     </span>
                     <span class="_5k_2 _5dba">
                         <label class="sexo" for="u_2o_5_vp">Hombre</label>
-                        <input type="radio" class="_8esa" name="sex" value="2" id="u_2o_5_vp">
+                        <input type="radio" class="_8esa" name="sex" value="hombre" id="u_2o_5_vp">
                     </span>
                 </span>
             </div>
@@ -91,12 +91,15 @@
 
             
             <div class="enviar_registro">
-                <a href="{{url_for('main.index')}}" class="enviar_registro"><input type="button" class="botonRegistro" value="Registrarte" onclick="return validar()"></a>
+                <button type="submit" id="btn_registrarse" onclick="return validar_registro()" > Registrarte </button> <!--cambios evert-->
+                <button type="submit" id="volver_inicio" onclick="return redirect(url_for('main.index'))" >Volver al incio </button>   <!--cambios evert-->
+                <!--<a href="{{url_for('main.index')}}" class="enviar_registro"><input type="button" class="botonRegistro" value="Registrarte" onclick="return validar()"></a>-->
             </div>
 
             <!--  Esto es un comentario en HTML   -->
 
         </form>
+        
     </body>
     
 </html>
