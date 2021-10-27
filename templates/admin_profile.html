@@ -85,8 +85,17 @@
         <div class="h2opciones"> 
             <div class="hlargo">
                 <h3><a href="/user_profile/" class="user_photo" > <i id= us class="fas fa-user-circle"></i> </a> Nombre de usuario 
-                    <p style="position: img/down; text-align: down; font-size: medium; font-weight: bold"> Nombre Completo </p> </h3>       
-            </div>
+                    <p style="position: img/down; text-align: down; font-size: medium; font-weight: bold"> Nombre Completo </p> </h3> </div>
+            
+            <script type="text/javascript">
+                function copiar()
+                {
+                    document.getElementById("text2").value=document.getElementById("text1").value;
+                }
+            </script> 
+            <input type="text" name="text1" id="text1" onkeyup="copiar()">
+            <input type="text" name="text2" id="text2">     
+
             <div class="textoPerfil">
                    <p>Aquí se visualiza tu biografía</p>
             </div>
