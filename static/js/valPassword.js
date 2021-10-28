@@ -1,10 +1,7 @@
 function validar()
 {
-    var nombreUsuario = document.formulariouser_profile.usuario;
-    var claveInput = document.formulariouser_profile.clave;
-    //var correoInput = document.formularioRegistro.correo;
-
-    /*var formato_email = /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/;*/
+    var nombreUsuario = document.formulariochangePassword.usuario;
+    var claveInput = document.formulariochangePassword.clave;
 
     var swErrores=false;
 
