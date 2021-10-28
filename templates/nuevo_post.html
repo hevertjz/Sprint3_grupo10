@@ -46,6 +46,7 @@
             se muestra en la linea 10 .....En la clase wrapper se encuenta todo lo relacionado a la barra de busqueda-->
           
         </div>
+        <!-- ESTE CSS ESTA UNIDO AL FEED.CSS POR EL CAMBIO QUE HICIERON AL CÓDIGO  -->
         <br>
         <br>
 
@@ -55,37 +56,34 @@
             <a href="/user_profile/">Perfil  </a>
             <a href="/user_profile/">Editar  </a>
             <a href="/new_post/">Nuevo post  </a></h4>
-            <h2 id="titcrear"> Crear nuevo post</h2> 
+            
+            <h1 id="titcrear" style= "background-color: whitesmoke; color:#460259; text-align: center"> Crea un Nuevo Post Aquí </h1> 
         </div>
 
-        <div class="h2opciones"> 
-            <div class="hlargo">
-                <h3><a href="/user_profile/" class="user_photo"><i id= us1 class="fas fa-user-circle" ></i> Nombre de usuario </a> </h3>       
+        <div class="contenedor">
+            <div class="userimg1">
+                    <img id=fotoperfil src="../static/img/perfil.jpg" style= "width:200px; height:200px">
+                </div>
+            <div class="userimg2">
+                    <img id=fotocamara src="../static/img/iconocamara.png" style= "width:260px; height:200px; ">                    
             </div>
-        </div>
 
-        <div class=" etiquetar"> 
-            <hr id="lineal">
-            <h3><a href="/new_post/" class="etiq"> Etiquetar amigos <i id="etiquet" class="fas fa-user-tag"></i> </a></h3>
-        
-       </div>
+            <div class=centrado id="post"></div>
+                <p style="text-align: center;">
+                    Sube una imagen:<input type="file" name="imagensubida" accept="image/png, .jpeg, .jpg, image/gif">
+                    <input type="submit" value="Enviar datos">
+                    <input type="hidden" name="escondido"/> 
+                </p> 
 
-       <div class="ubicar"> 
-           <hr id="lineal1">
-           <h3><a href="/new_post/" class="ubi"> Usar ubicación <i id ="ubic" class="fas fa-map-marker-alt"></i> </h3>
-       </div>
+            </div>
 
-       <div class="ubicar1">
-           <hr id="lineal2">
-       </div>
-
-        <input type="submit" name="crear" value= "Crear" style="width: 80px; height: 40px; color:whitesmoke; background-color: #460259;"/>
-
-        <div class="textoComentario">
-            <textarea name="mitextarea" id="mitextarea" cols="100" rows="7" style="resize: both;">Agrega aquí tu comentario</textarea>
-        </div>
+            <br>
+            <div class="textoComentario">
+            <textarea name="mitextarea" id="mitextarea" cols="60" rows="9" style="resize: both;"> Agrega aquí tu comentario</textarea><br>
             <button type="submit" value="Crear"> Crear </button>
-            <script src="../static/js/buscador.js"> </script>
+        </div>
+        
+        <script src="../static/js/buscador.js"> </script>
     </body>
   
 </html>
