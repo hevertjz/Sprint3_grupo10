@@ -382,6 +382,31 @@ h4{
     top: -27%;
 }
 
+/*vista nuevo post
+   esto es de la vista del nuevo post que esta aqui no sé la razon
+}*/
+
+.userimg1{
+    margin: 1px;
+    display:block;
+}
+.userimg2{
+    text-align: center;
+    display:block;
+    width: 60%;
+    
+}
+.userimg1,.userimg2{
+    display: inline-block;
+}
+
+.textoComentario{
+    text-align: center;
+    display:block;
+    width: 100%;
+    
+}
+
 
 
 
