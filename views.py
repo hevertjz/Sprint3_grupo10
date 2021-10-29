@@ -57,11 +57,14 @@ def hacerLogin():
                 session['username'] = user[3]
                 session['nombre'] = user [1]
                 session['role'] = user[8]
+                if(user[8] == "user"):
+                    return redirect(url_for('main.feed'))
+                if(user[8] == "admin"):
+                    return redirect(url_for('main.dashboard'))
 
-                return redirect(url_for('main.feed'))
         
         
-        # flash('Usuario o clave incorrecto.')   pendiente por agregar
+        flash('Usuario o clave incorrecto.')
         
             
     return render_template('index.html') #cuando se manda get.
@@ -98,7 +101,6 @@ def register():
         clave= generate_password_hash(clave) #aqui se se usa el metodo para crear el hash sobre la clave
         db.execute("insert into Usuario(nombres, apellidos, username, email, sexo, dob, clave, role) values( ?, ?, ?, ? ,? ,?, ? ,?)",( nombres, apellidos, username, email ,sexo , dob, clave, role))
         db.commit()
-
         print("registro exitoso")
         return redirect(url_for('main.index'))
 

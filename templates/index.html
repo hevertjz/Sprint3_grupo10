@@ -9,7 +9,8 @@
 </head>
 
 <body>
- 
+  
+
   <div class="login-page">
     <div class="row">
       <!--<h1>Cairina Moschata</h1> -->
@@ -35,7 +36,15 @@
         </div>
 
         <div>
-          <p> </p>
+          <p> 
+            {% with mensajes = get_flashed_messages() %}
+              {% if mensajes %}
+                {% for m in mensajes %}
+                  <div class="error.msm"> {{ m }} </div>
+                {% endfor %}
+              {% endif %}
+            {% endwith%}
+          </p>
 
 
 
@@ -87,7 +96,13 @@
     </div>
 
   </div>
-
+  {% with mensajes = get_flashed_messages() %}
+    {% if mensajes %}
+      {% for m in mensajes %}
+        <div class="error.msm"> {{ m }} </div>
+      {% endfor %}
+    {% endif %}
+  {% endwith%}
 </body>
 
 </html>

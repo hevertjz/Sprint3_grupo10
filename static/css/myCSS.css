@@ -119,3 +119,77 @@ form
     left: 37%;
     top: 50%;
 }
+
+
+
+/*------------------------------barra de estado--------------------*/
+
+#barra_estado{
+    
+    width: 100%; /* width: 100%;*/
+    min-width: 1110px;
+    height: 60px;
+    background-color: #460259;
+    position: fixed; /*sobre el el body*/
+    top: 0%;
+    left: 0%;
+    z-index: 30;
+    color: #ededed;
+    text-align: center;
+    font-weight: 700;
+
+}
+
+
+.btn_icon{
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    left: 1%;
+    top: 4px;
+    border-radius: 10%;
+}
+
+.txt_icon{
+    height: 40px;
+    width: 200px;
+    position: absolute;
+    top: 9px;
+    left: 4%;
+}
+
+
+#btn_user{
+    position: absolute;
+    right: 1%;
+    top: 5px;
+    cursor: pointer;
+    padding: 5px 1px;
+    font-size:35px;
+    text-align: center;
+    color: #ededed;
+    
+}
+
+
+#btn_logout{
+    position: absolute;
+    right: 4.1%;
+    top: 5px;
+    cursor: pointer;
+    padding: 5px 6px;
+    text-decoration: none;/*nuevo*/
+    font-size:35px;
+    text-align: center;
+    color: #ededed;
+}
+
+
+
+
+.form-group{
+    width: 250px;
+    margin: 0%;
+    position: absolute;
+    top: 7%
+}

@@ -4,10 +4,31 @@
         <title>Cairina Moschata</title>
         <link rel="stylesheet" type="text/css" href="../static/css/myCSS.css"/>    
         <link rel="shortcut icon"  href="../static/img/favicon.png"> 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js"></script>   
+        <link rel="stylesheet" href="../static/fontawasome/css/all.min.css">
+        <!-- <link rel="stylesheet" type="text/css" media="screen" href="../static/css/feed.css" /> -->
+        <script src="../static/js/buscador.js"> </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.js"></script>
     </head>
 
     <body>
+        
+        
+
+        <div id ="barra_estado">
+            <h2 class="icon_text">Dasboard Administrativo </h2>
+            <a href="{{url_for('main.dashboard')}}" > <img src="{{ url_for('static', filename='/img/icon_cairina.jpg') }}" class="btn_icon" alt="icono de cairina"></a>
+            <a href="{{url_for('main.dashboard')}}" > <img src="{{ url_for('static', filename='/img/texto_logo_2.png') }}" class="txt_icon" alt="icono de cairina"></a>
+            
+            
+
+            <!-- <a href="{{url_for('main.notificaciones')}}" id="btn_notification"><i class="fas fa-bell"></i></a> -->
+            <a href="{{url_for('main.logout')}}" id="btn_logout"><i class="fas fa-sign-out-alt"></i></a>
+            <a href="#" id="btn_user"><i class=" fas fa-user-circle"></i></i></a>
+            <!-- En el div barra_estado se usan anchors en forma de botones para utilizar iconos de fontawesome
+            es necesario tener las carpetas "svgs y webfonts" dentro del proyecto para que funcionen y utilizar un link como 
+            se muestra en la linea 10 .....En la clase wrapper se encuenta todo lo relacionado a la barra de busqueda-->
+        
+        </div>
         <div id="div0" class="container">
 
             <div class="row">
@@ -20,30 +41,58 @@
                         <p>Social</p>
                         <p>Educativo</p>
                     </div>
-                </div>
-
-                <div id="div1">
+                    <div id="div1">
             
-                    <h1>Región</h1>                
-                    <p>Pacífico</p>
-                    <p>Caribe</p>
-                    <p>Orinoquía</p>
-                    <p>Amazonía</p>
-                    <p>Andina</p>   
-                    <p>Insular</p>
-                
+                        <h1>Región</h1>                
+                        <p>Pacífico</p>
+                        <p>Caribe</p>
+                        <p>Orinoquía</p>
+                        <p>Amazonía</p>
+                        <p>Andina</p>   
+                        <p>Insular</p>
+                    
+                    </div>
+    
+                    <div id="div1">
+                           
+                        <h1>Medios</h1>                
+                        <p>Videos</p>
+                        <p>Fotos</p>
+                        <p>Comentarios</p>
+                        <p>Blog´s</p>
+                        <p>Artículos</p> 
+                    
+                    </div>
+
+                    <form name="top_profiles">
+                        <h1>Top 20 perfiles</h1>
+                        <input type="text" name="Nombre">
+                        <input type="text" name="Nombre">
+                        <input type="text" name="Nombre">
+                        <input type="text" name="Nombre">
+                        <input type="text" name="Nombre">
+                        <input type="text" name="Nombre">
+                        <input type="text" name="Nombre">
+                        <input type="text" name="Nombre">
+                        <input type="text" name="Nombre">
+                        <input type="text" name="Nombre">
+        
+                    </form>
+                    <form name="stadistics">
+                        <p>Total Usuarios</p>
+                        <input type="text" name="Nombre">
+                        <p>Total páginas comerciales</p>
+                        <input type="text" name="Nombre">
+                        <p>Actualizaciones</p>
+                        <input type="text" name="Nombre">
+                        <p>Descarga contenido</p>
+                        <input type="text" name="Nombre">
+                       
+                        
+                    </form>
                 </div>
 
-                <div id="div1">
-                       
-                    <h1>Medios</h1>                
-                    <p>Videos</p>
-                    <p>Fotos</p>
-                    <p>Comentarios</p>
-                    <p>Blog´s</p>
-                    <p>Artículos</p> 
                 
-                </div>
 
                 <div class="inversion"> <!--id="div2"-->
                     <h1>Inversión en publicidad</h1>
@@ -148,32 +197,7 @@
                     </script>
                 </div>
             </div>
-            <form name="top_profiles">
-                <h1>Top 20 perfiles</h1>
-                <input type="text" name="Nombre">
-                <input type="text" name="Nombre">
-                <input type="text" name="Nombre">
-                <input type="text" name="Nombre">
-                <input type="text" name="Nombre">
-                <input type="text" name="Nombre">
-                <input type="text" name="Nombre">
-                <input type="text" name="Nombre">
-                <input type="text" name="Nombre">
-                <input type="text" name="Nombre">
-
-            </form>
-            <form name="stadistics">
-                <p>Total Usuarios</p>
-                <input type="text" name="Nombre">
-                <p>Total páginas comerciales</p>
-                <input type="text" name="Nombre">
-                <p>Actualizaciones</p>
-                <input type="text" name="Nombre">
-                <p>Descarga contenido</p>
-                <input type="text" name="Nombre">
-               
-                
-            </form>
+            
         </div>
 
     </body>

@@ -59,12 +59,12 @@ function validar()
         return false;
     }
     else{
+        alert("registro exitoso")
         return true;
+        
     }
 
-
-    
-
 }
+
 
 // alert("Registro exitoso") pendiente por poner alert y redirigir al login
