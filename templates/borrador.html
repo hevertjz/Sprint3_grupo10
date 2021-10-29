@@ -1,40 +1,960 @@
-<div id ="barra_estado"> 
+------------------------------------------feed----------------------------------------
+
+<!DOCTYPE html>
+<html lang="sp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cairina Moschata</title>
+    <link rel="shortcut icon"  href="../static/img/favicon.png">
+    <link rel="stylesheet" type="text/css" media="screen" href="../static/css/feed.css" />
+    <link rel="stylesheet" href="../static/fontawasome/css/all.min.css">
+</head>
+<body>
+    <div id ="barra_estado"> 
         
-    <div id="ctn-bars-search"> <!--search-input-->
-        <a href="" target="_blank" hidden></a>
-            <input type="text" id="inputSearch" placeholder="¿buscas a alguien? Escribe su nombre aquí" > <!--id="inputSearch"-->
-            
-            <div id="ctn-icon-search"> <!--<a href="{{url_for('main.resultados')}}">--><i class="fas fa-search" id="icon-search"></i></a> <!--id="icon-search"-->
-            </div>
-            <ul id ="box-search"> 
-                <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> luisa</a></a></li>
-                <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> leo</a></a></li>
-                <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> shakira</a></a></li>
-                <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> marco</a></a></li>
-                <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> daniela</a></a></li>
-                <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> jbalvin</a></a></li>
+        <div id="ctn-bars-search"> <!--search-input-->
+            <a href="" target="_blank" hidden></a>
+                <input type="text" id="inputSearch" placeholder="¿buscas a alguien? Escribe su nombre aquí" > <!--id="inputSearch"-->
                 
-            </ul>
-            <!--<div class="icon"><i class="fas fa-search"></i></div>-->
+                <div id="ctn-icon-search" > <a href="{{url_for('main.resultados')}}"><i class="fas fa-search" id="icon-search"></i></a><!----> <!--id="icon-search"-->
+                </div>
+                <ul id ="box-search"> 
+                    <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> luisa</a></a></li>
+                    <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> leo</a></a></li>
+                    <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> shakira</a></a></li>
+                    <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> marco</a></a></li>
+                    <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> daniela</a></a></li>
+                    <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> jbalvin</a></a></li>
+                    
+                </ul>
+                <!--<div class="icon"><i class="fas fa-search"></i></div>-->
+            </div>
+
+       
+        <!--<h2 class="icon_text">Cairina Moschata</h2> cambiar imagen a una con icono y letras-->
+        <a href="{{url_for('main.feed')}}" > <img src="{{ url_for('static', filename='/img/icon_cairina.jpg') }}" class="btn_icon" alt="icono de cairina"></a>
+        <a href="{{url_for('main.feed')}}" > <img src="{{ url_for('static', filename='/img/texto_logo_2.png') }}" class="txt_icon" alt="icono de cairina"></a>
+
+
+        <a href="{{url_for('main.notificaciones')}}" id="btn_notification"><i class="fas fa-bell"></i></a>
+        <a href="{{url_for('main.logout')}}" id="btn_logout"><i class="fas fa-sign-out-alt"></i></a>
+        <a href="{{url_for('main.mensajes')}}" id="btn_message"> <i class="fas fa-envelope"></i></a>
+        <a href="{{url_for('main.perfil_user')}}" id="btn_user"><i class=" fas fa-user-circle"></i></i></a>
+         <!-- En el div barra_estado se usan anchors en forma de botones para utilizar iconos de fontawesome
+        es necesario tener las carpetas "svgs y webfonts" dentro del proyecto para que funcionen y utilizar un link como 
+        se muestra en la linea 10 .....En la clase wrapper se encuenta todo lo relacionado a la barra de busqueda-->
+      
+    </div>
+    
+
+    
+    <div id ="titulo">
+        <h1 id="feed_title"> {{session['nombre']}}, ¿A donde vamos hoy?</h1>  <!--se agrego session  ¿A dónde vamos?-->
+        <p></p>
+    </div>
+    
+    
+    
+    <div class="contenido">
+         <!-- se utilizan 4 divs dentro de contenido, que a su vez contienen las imagenes para poder darles estilos de manera 
+        eficiente.... se utilizan anchors como botones para linkear otras vistas -->
+        
+        <div class="square_post">
+            <img class="img_post" src="../static/img/nuevo_post.jpg" alt="imagen de una persona fotofrageando a su perro">
+            <a href="{{url_for('main.post')}}" class="btn_post"><h4>Nuevo Post</h4></a>
+        </div>
+        <div class="square_explore">
+            <img class="img_explore" src="../static/img/explorar.jpg" alt="foto de personas viendo el celular">
+            <a href="{{url_for('main.explorar')}}" class="btn_explore" ><h4>Explorar</h4></a>
+        </div>
+        <div class="square_space">
+            <img class="img_space" src="../static/img/mi_espacio.jpg" alt="foto de amigos reunidos">
+            <a href="{{url_for('main.mi_espacio')}}" class="btn_space"><h4>Mi Espacio</h4></a>
+        </div>
+        <div class="square_connect">
+            <img class="img_connect" src="../static/img/relacionate.jpg" alt="foto de personas conociendose">
+            <a href="{{url_for('main.relacionate')}}" class="btn_connect"><h4>Relacionate</h4></a>
+        </div>
+    </div>
+
+    <div class="footer">
+                <div class="footer-links">
+  
+                  <a href="#">Terms of Use</a> | 
+  
+                  <a href="#">Privacy Policy</a> | 
+  
+                  <a href="#">Developers</a> | 
+  
+                  <a href="#">Contact</a> | 
+  
+                  <a href="#">About</a>
+                  <h3>Copyright © Company - All rights reserved</h3>
+                </div>   
+                
+                       
+  
+
+    </div>
+
+    <!--<Script src="../static/js/feed.js"></Script>
+    <Script>src="../static/js/susggestions.js"</Script>-->
+
+    <script src="../static/js/buscador.js"> </script>
+
+</body>
+</html>
+
+--------------------------------------------------- relacionate ---------------------------------------------------
+<!DOCTYPE html>
+<html lang="sp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cairina Moschata</title>
+    <link rel="shortcut icon"  href="../static/img/favicon.png">
+    <link rel="stylesheet" type="text/css" media="screen" href="../static/css/feed.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../static/css/relacionate.css" />
+    <link rel="stylesheet" href="../static/fontawasome/css/all.min.css">
+    
+</head>
+<body>
+    <div id ="barra_estado"> 
+        
+        <div id="ctn-bars-search"> <!--search-input-->
+            <a href="" target="_blank" hidden></a>
+                <input type="text" id="inputSearch" placeholder="¿buscas a alguien? Escribe su nombre aquí" > <!--id="inputSearch"-->
+                
+                <div id="ctn-icon-search"> <!--<a href="{{url_for('main.resultados')}}">--><i class="fas fa-search" id="icon-search"></i></a> <!--id="icon-search"-->
+                </div>
+                <ul id ="box-search"> 
+                    <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> luisa</a></a></li>
+                    <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> leo</a></a></li>
+                    <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> shakira</a></a></li>
+                    <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> marco</a></a></li>
+                    <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> daniela</a></a></li>
+                    <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> jbalvin</a></a></li>
+                    
+                </ul>
+                <!--<div class="icon"><i class="fas fa-search"></i></div>-->
+            </div>
+
+       
+        <!--<h2 class="icon_text">Cairina Moschata</h2> cambiar imagen a una con icono y letras-->
+        <a href="{{url_for('main.feed')}}" > <img src="{{ url_for('static', filename='/img/icon_cairina.jpg') }}" class="btn_icon" alt="icono de cairina"></a>
+        <a href="{{url_for('main.feed')}}" > <img src="{{ url_for('static', filename='/img/texto_logo_2.png') }}" class="txt_icon" alt="icono de cairina"></a>
+
+
+        <a href="{{url_for('main.notificaciones')}}" id="btn_notification"><i class="fas fa-bell"></i></a>
+        <a href="{{url_for('main.index')}}" id="btn_logout"><i class="fas fa-sign-out-alt"></i></a>
+        <a href="{{url_for('main.mensajes')}}" id="btn_message"> <i class="fas fa-envelope"></i></a>
+        <a href="{{url_for('main.perfil_user')}}" id="btn_user"><i class=" fas fa-user-circle"></i></i></a>
+         <!-- En el div barra_estado se usan anchors en forma de botones para utilizar iconos de fontawesome
+        es necesario tener las carpetas "svgs y webfonts" dentro del proyecto para que funcionen y utilizar un link como 
+        se muestra en la linea 10 .....En la clase wrapper se encuenta todo lo relacionado a la barra de busqueda-->
+      
+    </div>
+
+    <div class="nav_menu">
+        <a href="feed.html">Inicio</a> | 
+
+        <a href="nuevo_post.html">Nuevo Post</a> |   
+
+        <a href="explorar.html">Tu espacio</a> | 
+
+        <a href="mi_espacio.html">Mi espacio</a>
+
+    </div>
+    <h3 class="amigos">¿los conoces? ¡siguelos!</h3>
+
+    <div class="resultado_busqueda"> <!--""-->
+        <img src="../static/img/siguelos.jpg" alt="foto de varias personas tomandose una selfie">
+    </div>
+    <div class="footer">
+        <div class="footer-links">
+
+          <a href="#">Terms of Use</a> | 
+
+          <a href="#">Privacy Policy</a> | 
+
+          <a href="#">Developers</a> | 
+
+          <a href="#">Contact</a> | 
+
+          <a href="#">About</a>
+          <h3>Copyright © Company - All rights reserved</h3>
+        </div>   
+        
+               
+    </div>
+    <script src="../static/js/buscador.js"> </script>
+</body>
+
+
+
+</html>
+
+
+--------------------------------------resultado de busqueda--------------------------------------------
+
+<!DOCTYPE html>
+<html lang="sp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cairina Moschata</title>
+    <link rel="shortcut icon"  href="../static/img/favicon.png">
+    <link rel="stylesheet" type="text/css" media="screen" href="../static/css/feed.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../static/css/search_result.css" />
+    <link rel="stylesheet" href="../static/fontawasome/css/all.min.css">
+    
+</head>
+<body>
+    <div id ="barra_estado"> 
+        
+        <div id="ctn-bars-search"> <!--search-input-->
+            <a href="" target="_blank" hidden></a>
+                <input type="text" id="inputSearch" placeholder="¿buscas a alguien? Escribe su nombre aquí" > <!--id="inputSearch"-->
+                
+                <div id="ctn-icon-search"> <!--<a href="{{url_for('main.resultados')}}">--><i class="fas fa-search" id="icon-search"></i></a> <!--id="icon-search"-->
+                </div>
+                <ul id ="box-search"> 
+                    <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> luisa</a></a></li>
+                    <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> leo</a></a></li>
+                    <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> shakira</a></a></li>
+                    <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> marco</a></a></li>
+                    <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> daniela</a></a></li>
+                    <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> jbalvin</a></a></li>
+                    
+                </ul>
+                <!--<div class="icon"><i class="fas fa-search"></i></div>-->
+            </div>
+    
+       
+        <!--<h2 class="icon_text">Cairina Moschata</h2> cambiar imagen a una con icono y letras-->
+        <a href="{{url_for('main.feed')}}" > <img src="{{ url_for('static', filename='/img/icon_cairina.jpg') }}" class="btn_icon" alt="icono de cairina"></a>
+        <a href="{{url_for('main.feed')}}" > <img src="{{ url_for('static', filename='/img/texto_logo_2.png') }}" class="txt_icon" alt="icono de cairina"></a>
+    
+    
+        <a href="{{url_for('main.notificaciones')}}" id="btn_notification"><i class="fas fa-bell"></i></a>
+        <a href="{{url_for('main.index')}}" id="btn_logout"><i class="fas fa-sign-out-alt"></i></a>
+        <a href="{{url_for('main.mensajes')}}" id="btn_message"> <i class="fas fa-envelope"></i></a>
+        <a href="{{url_for('main.perfil_user')}}" id="btn_user"><i class=" fas fa-user-circle"></i></i></a>
+         <!-- En el div barra_estado se usan anchors en forma de botones para utilizar iconos de fontawesome
+        es necesario tener las carpetas "svgs y webfonts" dentro del proyecto para que funcionen y utilizar un link como 
+        se muestra en la linea 10 .....En la clase wrapper se encuenta todo lo relacionado a la barra de busqueda-->
+      
+    </div>
+
+    <div class="nav_menu">
+        <a href="{{url_for('main.feed')}}">Inicio</a> | 
+
+        <a href="{{url_for('main.post')}}">Nuevo Post</a> |   
+
+        <a href="{{url_for('main.explorar')}}">Explorar</a> | 
+
+        <a href="{{url_for('main.mi_espacio')}}">Tu espacio</a> |
+
+        <a href="{{url_for('main.relacionate')}}">Relacionate</a>
+
+
+
+    </div>
+    <h3 class="resultados">Resultados:</h3>
+
+    <div class="resultado_busqueda"> <!--""-->
+        <h5> No se encontraron resultados :(</h5>
+        <p>
+            Esto es una prueba para mostrar el funcionamiento del scroll bar!!!!.
+            <br>
+            <br>
+            Aqui Va desplegada la lista de usuarios encontrados teniendo en cuenta los criterios de busqueda
+            <br>
+            <br>
+            
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti consectetur minus deleniti culpa ducimus alias blanditiis, suscipit eligendi vel quam magni ad quasi iure? Nulla dolorum repellat atque laboriosam. Vel?
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti sequi provident expedita esse, nostrum corporis reiciendis, vel odio laboriosam dolorum distinctio totam, soluta delectus dolores vero. Eum libero laborum sunt. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti sequi provident expedita esse, nostrum corporis reiciendis, vel odio laboriosam dolorum distinctio totam, soluta delectus dolores vero. Eum libero laborum sunt.
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti sequi provident expedita esse, nostrum corporis reiciendis, vel odio laboriosam dolorum distinctio totam, soluta delectus dolores vero. Eum libero laborum sunt. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti sequi provident expedita esse, nostrum corporis reiciendis, vel odio laboriosam dolorum distinctio totam, soluta delectus dolores vero. Eum libero laborum sunt.
+        </p>
+    </div>
+    <div class="footer">
+        <div class="footer-links">
+
+          <a href="#">Terms of Use</a> | 
+
+          <a href="#">Privacy Policy</a> | 
+
+          <a href="#">Developers</a> | 
+
+          <a href="#">Contact</a> | 
+
+          <a href="#">About</a>
+          <h3>Copyright © Company - All rights reserved</h3>
+        </div>   
+        
+               
+    </div>
+    <script src="../static/js/buscador.js"> </script>
+    
+</body>
+
+
+
+</html>
+
+
+
+-----------------------------------------explorar ---------------------------------------------------
+<!DOCTYPE html>
+<html lang="sp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cairina Moschata</title>
+    <link rel="shortcut icon"  href="../static/img/favicon.png">
+    <link rel="stylesheet" type="text/css" media="screen" href="../static/css/feed.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../static/css/explorar.css" />
+    <link rel="stylesheet" href="../static/fontawasome/css/all.min.css">
+    
+</head>
+<body>
+    <div id ="barra_estado"> 
+        
+        <div id="ctn-bars-search"> <!--search-input-->
+            <a href="" target="_blank" hidden></a>
+                <input type="text" id="inputSearch" placeholder="¿buscas a alguien? Escribe su nombre aquí" > <!--id="inputSearch"-->
+                
+                <div id="ctn-icon-search"> <!--<a href="{{url_for('main.resultados')}}">--><i class="fas fa-search" id="icon-search"></i></a> <!--id="icon-search"-->
+                </div>
+                <ul id ="box-search"> 
+                    <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> luisa</a></a></li>
+                    <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> leo</a></a></li>
+                    <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> shakira</a></a></li>
+                    <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> marco</a></a></li>
+                    <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> daniela</a></a></li>
+                    <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> jbalvin</a></a></li>
+                    
+                </ul>
+                <!--<div class="icon"><i class="fas fa-search"></i></div>-->
+            </div>
+    
+       
+        <!--<h2 class="icon_text">Cairina Moschata</h2> cambiar imagen a una con icono y letras-->
+        <a href="{{url_for('main.feed')}}" > <img src="{{ url_for('static', filename='/img/icon_cairina.jpg') }}" class="btn_icon" alt="icono de cairina"></a>
+        <a href="{{url_for('main.feed')}}" > <img src="{{ url_for('static', filename='/img/texto_logo_2.png') }}" class="txt_icon" alt="icono de cairina"></a>
+    
+    
+        <a href="{{url_for('main.notificaciones')}}" id="btn_notification"><i class="fas fa-bell"></i></a>
+        <a href="{{url_for('main.index')}}" id="btn_logout"><i class="fas fa-sign-out-alt"></i></a>
+        <a href="{{url_for('main.mensajes')}}" id="btn_message"> <i class="fas fa-envelope"></i></a>
+        <a href="{{url_for('main.perfil_user')}}" id="btn_user"><i class=" fas fa-user-circle"></i></i></a>
+         <!-- En el div barra_estado se usan anchors en forma de botones para utilizar iconos de fontawesome
+        es necesario tener las carpetas "svgs y webfonts" dentro del proyecto para que funcionen y utilizar un link como 
+        se muestra en la linea 10 .....En la clase wrapper se encuenta todo lo relacionado a la barra de busqueda-->
+      
+    </div>
+
+    <div class="nav_menu">
+        <a href="{{url_for('main.feed')}}">Inicio</a> | 
+
+        <a href="{{url_for('main.post')}}">Nuevo Post</a> |   
+
+        <a href="{{url_for('main.mi_espacio')}}">Tu espacio</a> | 
+
+        <a href="{{url_for('main.relacionate')}}">Relacionate</a>
+
+    </div>
+    <h3 class="amigos">Los mas populares están aquí</h3>
+
+    <div class="resultado_busqueda"> <!--""-->
+        <img src="../static/img/shakira.jpg" alt="foto de varias personas tomandose una selfie">
+        <img src="../static/img/leomessi.jpg" alt="foto de hombre jugando futbol">
+        <img src="../static/img/jbalvin.jpg" alt="foto de mujer en la playa">
+    </div>
+    <div class="footer">
+        <div class="footer-links">
+
+          <a href="#">Terms of Use</a> | 
+
+          <a href="#">Privacy Policy</a> | 
+
+          <a href="#">Developers</a> | 
+
+          <a href="#">Contact</a> | 
+
+          <a href="#">About</a>
+          <h3>Copyright © Company - All rights reserved</h3>
+        </div>   
+        
+               
+    </div>
+    <script src="../static/js/buscador.js"> </script>
+</body>
+
+
+
+</html>
+
+-------------------------nuevo post ---------------------------------------------------
+<html>
+    <head> 
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/post.css') }}">
+        <title> username V (@username)| Fotos y videos de Cairina Moschata </title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" media="screen" href="../static/css/feed.css" />
+        <link rel="stylesheet" href="../static/fontawasome/css/all.min.css">
+        <script src="https://kit.fontawesome.com/25598d9e09.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <div id ="barra_estado"> 
+        
+            <div id="ctn-bars-search"> <!--search-input-->
+                <a href="" target="_blank" hidden></a>
+                    <input type="text" id="inputSearch" placeholder="¿buscas a alguien? Escribe su nombre aquí" > <!--id="inputSearch"-->
+                    
+                    <div id="ctn-icon-search"> <!--<a href="{{url_for('main.resultados')}}">--><i class="fas fa-search" id="icon-search"></i></a> <!--id="icon-search"-->
+                    </div>
+                    <ul id ="box-search"> 
+                        <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> luisa</a></a></li>
+                        <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> leo</a></a></li>
+                        <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> shakira</a></a></li>
+                        <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> marco</a></a></li>
+                        <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> daniela</a></a></li>
+                        <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> jbalvin</a></a></li>
+                        
+                    </ul>
+                    <!--<div class="icon"><i class="fas fa-search"></i></div>-->
+                </div>
+        
+           
+            <!--<h2 class="icon_text">Cairina Moschata</h2> cambiar imagen a una con icono y letras-->
+            <a href="{{url_for('main.feed')}}" > <img src="{{ url_for('static', filename='/img/icon_cairina.jpg') }}" class="btn_icon" alt="icono de cairina"></a>
+            <a href="{{url_for('main.feed')}}" > <img src="{{ url_for('static', filename='/img/texto_logo_2.png') }}" class="txt_icon" alt="icono de cairina"></a>
+        
+        
+            <a href="{{url_for('main.notificaciones')}}" id="btn_notification"><i class="fas fa-bell"></i></a>
+            <a href="{{url_for('main.index')}}" id="btn_logout"><i class="fas fa-sign-out-alt"></i></a>
+            <a href="{{url_for('main.mensajes')}}" id="btn_message"> <i class="fas fa-envelope"></i></a>
+            <a href="{{url_for('main.perfil_user')}}" id="btn_user"><i class=" fas fa-user-circle"></i></i></a>
+             <!-- En el div barra_estado se usan anchors en forma de botones para utilizar iconos de fontawesome
+            es necesario tener las carpetas "svgs y webfonts" dentro del proyecto para que funcionen y utilizar un link como 
+            se muestra en la linea 10 .....En la clase wrapper se encuenta todo lo relacionado a la barra de busqueda-->
+          
         </div>
 
-   
-    <!--<h2 class="icon_text">Cairina Moschata</h2> cambiar imagen a una con icono y letras-->
-    <a href="{{url_for('main.feed')}}" > <img src="{{ url_for('static', filename='/img/icon_cairina.jpg') }}" class="btn_icon" alt="icono de cairina"></a>
-    <a href="{{url_for('main.feed')}}" > <img src="{{ url_for('static', filename='/img/texto_logo_2.png') }}" class="txt_icon" alt="icono de cairina"></a>
+         <h5> Inicio |> Perfil |> Crear nuevo post </h5> 
 
+         <div class="crearpost">   
+         <h2 id="titcrear"> Crea un nuevo post</h2> 
+         <img id="insertimg" src="{{ url_for('static', filename='img/insertimage.png') }}" width="200" height="150">
+        </div>
 
-    <a href="{{url_for('main.notificaciones')}}" id="btn_notification"><i class="fas fa-bell"></i></a>
-    <a href="{{url_for('main.index')}}" id="btn_logout"><i class="fas fa-sign-out-alt"></i></a>
-    <a href="{{url_for('main.mensajes')}}" id="btn_message"> <i class="fas fa-envelope"></i></a>
-    <a href="{{url_for('main.perfil_user')}}" id="btn_user"><i class=" fas fa-user-circle"></i></i></a>
-     <!-- En el div barra_estado se usan anchors en forma de botones para utilizar iconos de fontawesome
-    es necesario tener las carpetas "svgs y webfonts" dentro del proyecto para que funcionen y utilizar un link como 
-    se muestra en la linea 10 .....En la clase wrapper se encuenta todo lo relacionado a la barra de busqueda-->
+         <div class="identuser">
+            <img src="{{ url_for('static', filename='img/insert photo1.jpg') }}" width="70" height="50"> Nombre de usuario: <style width="380px"; heigh="25px"> </style>
+        </div>
+
+         <div class=" etiquetar"> 
+             <hr id="lineal">
+             <h4 id="etiper">Etiquetar personas</h4>
+             <img id="etiquet" src="{{ url_for('static', filename='img/etiquetar.png') }}" width="70" height="50"> <style width="380px"; heigh="25px"> </style>
+        </div>
+
+        <div class="ubicar"> 
+            <hr id="lineal1">
+            <h4 id="ubica">Usar localización</h4>
+            <img id="ubic" src="{{ url_for('static', filename='img/localizar.png') }}" width="70" height="50"> <style width="380px"; heigh="25px"> </style>
+        </div>
+
+        <div class="reaccionar"> 
+            <hr id="lineal2">
+            <h4 id="reaciona">Reacciones</h4>
+            <p> &#128512; &#128512; &#128148; &#128077;&#128514;&#128521;&#128525;&#128557;&#128536;&#128544; <style width= "90px"; height= "60px"; color= "yellow">  </style></p>
+        </div>
+
+        <div class="textoComentario">
+            <textarea name="mitextarea" id="mitextarea" cols="100" rows="7" style="resize: both;">Agrega aquí tu comentario</textarea>
+        </div>
+            <button type="submit" value="Crear"> Crear </button>
+            <script src="../static/js/buscador.js"> </script>
+    </body>
   
-</div>
+</html>
 
 
+------------------------------------user profile------------------------------------------
+{% extends 'base.html'%}
 
+{% block estilos %}
+<meta name="theme color" content="#C991D8">
+<link rel="stylesheet" type="text/css" media="screen" href="../static/css/feed.css" />
+<link rel="stylesheet" href="{{ url_for('static', filename='css/perfil.css') }}">
+
+
+{% endblock %}
+<!-- <title> username V (@username)| Fotos y videos de Cairina Moschata </title> -->
+
+{% block scripts %}
+<script src="https://kit.fontawesome.com/25598d9e09.js" crossorigin="anonymous"></script>
+<script src="js/profile.js"> </script>  
 <script src="../static/js/buscador.js"> </script>
 
+{% endblock %}
+    
+
+{% block contenido %} 
+    
+ 
+
+ <div>
+     <!--<h6 id=mapa> Inicio |> Perfil |> Editar perfil </h6>-->
+     <table class="tabla"> 
+         <thead>
+             <tr>
+                 <td>0000</td>
+                 <td>0000</td>
+                 <td>0000</td>
+             </tr>
+         </thead>
+         <td> Publicaciones </td>
+         <td>  Seguidores  </td>
+         <td>  Seguidos  </td>
+     </table>
+ </div>
+
+ <div class="h2opciones"> 
+
+     <div class="hlargo">
+         <h3><img src="{{ url_for('static', filename='img/insert photo1.jpg') }}" width="130" height="100"> 
+             <p style="position: img/down; text-align: down; font-size: medium; font-weight: bold; "> </p> </h3>   
+     </div>
+
+     <div class="textoPerfil">
+         <textarea name="mitextarea" id="mitextarea" cols="100" rows="7" style="resize: both;">Aquí descripción</textarea>
+     </div>
+
+ </div >
+
+ <div class="texto_foto">
+     <h6>Foto de perfil</h6>
+
+ </div>
+ <div class="texto_usuario">
+     <h6>Nombre de usuario</h6>
+
+ </div>
+
+
+ <button id=btnEditText type="submit">Editar tu descripción</button>
+ <h4> Configuración general </h4>
+ <div class="contenedor"> 
+     <div id="div3">
+         <img src="{{ url_for('static', filename='img/insert photo1.jpg') }}" width="50" height="50"><button>Editar foto </button> 
+         <p style=" text-align: right; font-size: small; color: gray; "> Formato jpg máx. 6MB</p> 
+     </div>
+     <form name="perfilUsuario" method="POST" action=""> 
+         <p>  Nombre completo <input id="nom" type="tex" name="nombre" style="width: 380px; height: 25px;">   
+         <p> Nombre de usuario: <input type= "text" name="username" id="username" style="width: 380px; height: 25px;">  </p>    
+         <p> Genero: <input type="radio" name="genero" value ="F"/> mujer
+                     <input type="radio" name="sexo" value="M" /> hombre
+                     <input type="radio" name="sexo" value="O" /> otro</p>
+         <p> Fecha de nacimiento <input type="date" name="date">   </p>   
+         <p>  Nacionalidad: <input type="text" name="text"> </p>
+         <p>Correo: <input type="tex" name="correo" style="width: 330px; height: 20px;"/> </p>
+         <p>Contraseña: <input type="password" name="password" style="width: 230px; height: 20px;"> </p>
+         <p> Telefono: <input type="number" name= "number">     Organización: <input type="text" name="text">  </p>
+         <p> Cambiar tipo de cuemta: <select><option>Personal</option><option>Empresarial</option></select>  </p>
+
+         <button type="submit" value="Enviar"> Enviar </button>
+     </form>    
+ </div> 
+ {% endblock %}
+
+
+
+ ----------------------user profile sra---------------
+ <html> 
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/perfil.css') }}">
+        <title> username V (@username)| Fotos y videos de Cairina Moschata </title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" media="screen" href="../static/css/feed.css" />
+        <link rel="stylesheet" href="../static/fontawasome/css/all.min.css">
+        <script src="https://kit.fontawesome.com/25598d9e09.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        
+    
+        <div id ="barra_estado"> 
+        
+            <div id="ctn-bars-search"> <!--search-input-->
+                <a href="" target="_blank" hidden></a>
+                    <input type="text" id="inputSearch" placeholder="¿buscas a alguien? Escribe su nombre aquí" > <!--id="inputSearch"-->
+                    
+                    <div id="ctn-icon-search"> <!--<a href="{{url_for('main.resultados')}}">--><i class="fas fa-search" id="icon-search"></i></a> <!--id="icon-search"-->
+                    </div>
+                    <ul id ="box-search"> 
+                        <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> luisa</a></a></li>
+                        <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> leo</a></a></li>
+                        <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> shakira</a></a></li>
+                        <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> marco</a></a></li>
+                        <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> daniela</a></a></li>
+                        <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> jbalvin</a></a></li>
+                        
+                    </ul>
+                    <!--<div class="icon"><i class="fas fa-search"></i></div>-->
+                </div>
+        
+           
+            <!--<h2 class="icon_text">Cairina Moschata</h2> cambiar imagen a una con icono y letras-->
+            <a href="{{url_for('main.feed')}}" > <img src="{{ url_for('static', filename='/img/icon_cairina.jpg') }}" class="btn_icon" alt="icono de cairina"></a>
+            <a href="{{url_for('main.feed')}}" > <img src="{{ url_for('static', filename='/img/texto_logo_2.png') }}" class="txt_icon" alt="icono de cairina"></a>
+        
+        
+            <a href="{{url_for('main.notificaciones')}}" id="btn_notification"><i class="fas fa-bell"></i></a>
+            <a href="{{url_for('main.index')}}" id="btn_logout"><i class="fas fa-sign-out-alt"></i></a>
+            <a href="{{url_for('main.mensajes')}}" id="btn_message"> <i class="fas fa-envelope"></i></a>
+            <a href="{{url_for('main.perfil_user')}}" id="btn_user"><i class=" fas fa-user-circle"></i></i></a>
+             <!-- En el div barra_estado se usan anchors en forma de botones para utilizar iconos de fontawesome
+            es necesario tener las carpetas "svgs y webfonts" dentro del proyecto para que funcionen y utilizar un link como 
+            se muestra en la linea 10 .....En la clase wrapper se encuenta todo lo relacionado a la barra de busqueda-->
+          
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div>
+            <h4 id=mapa> 
+            <a href="/feed/">Inicio </a>
+            <a href="/user_profile/">Perfil  </a>
+            </h4>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <td>00</td>
+                        <td>00</td>
+                        <td>00</td>
+                    </tr>
+                </thead>
+                <td> Publicaciones </td>
+                <td>  Seguidores  </td>
+                <td>  Seguidos  </td>
+            </table>
+        </div>
+
+        <div class="h2opciones"> 
+            <div class="hlargo">
+                <h3><a href="/user_profile/" class="user_photo" > <i id= us class="fas fa-user-circle"></i> </a> Nombre de usuario 
+                    <p style="position: img/down; text-align: down; font-size: medium; font-weight: bold"> Nombre Completo </p> </h3> </div>
+            <div class="textoPerfil">
+                   <p>Aquí se visualiza tu biografía</p>
+            </div>
+            <hr id="lineal">
+        </div>
+        <a href="/user_profile/"> <button id=btnEditText type="submit"> Edita tu perfil</button></a>
+        <br>
+        <br>
+        <a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> luisa</a>
+        <a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> marco</a>
+        <div class="imagenes">     
+        <img class="img_admin_profile" src="../static/img/Gente seguida.jpg" alt="personas que sigues" style="width: 40%; height: 60%;">
+        <img class="img_admin_profile" src="../static/img/Etiquetar personas.jpg" alt="etiquetar personas"style="width: 30%;height: 50%;" >
+        <img class="img_admin_profile" src="../static/img/seguir.png" alt="seguir a una persona"style="width: 25%; height: 50%;" >
+       </div>
+    </body>
+
+</html>
+
+        
+
+
+ ---------------------------------------mi espacio ---------------------------------------------------
+ <!DOCTYPE html>
+<html lang="sp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cairina Moschata</title>
+    <link rel="shortcut icon"  href="../static/img/favicon.png">
+    <link rel="stylesheet" type="text/css" media="screen" href="../static/css/feed.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../static/css/espacio.css" />
+    <link rel="stylesheet" href="../static/fontawasome/css/all.min.css">
+    
+</head>
+<body>
+    <div id ="barra_estado"> 
+        
+        <div id="ctn-bars-search"> <!--search-input-->
+            <a href="" target="_blank" hidden></a>
+                <input type="text" id="inputSearch" placeholder="¿buscas a alguien? Escribe su nombre aquí" > <!--id="inputSearch"-->
+                
+                <div id="ctn-icon-search"> <!--<a href="{{url_for('main.resultados')}}">--><i class="fas fa-search" id="icon-search"></i></a> <!--id="icon-search"-->
+                </div>
+                <ul id ="box-search"> 
+                    <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> luisa</a></a></li>
+                    <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> leo</a></a></li>
+                    <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> shakira</a></a></li>
+                    <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> marco</a></a></li>
+                    <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> daniela</a></a></li>
+                    <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> jbalvin</a></a></li>
+                    
+                </ul>
+                <!--<div class="icon"><i class="fas fa-search"></i></div>-->
+            </div>
+
+       
+        <!--<h2 class="icon_text">Cairina Moschata</h2> cambiar imagen a una con icono y letras-->
+        <a href="{{url_for('main.feed')}}" > <img src="{{ url_for('static', filename='/img/icon_cairina.jpg') }}" class="btn_icon" alt="icono de cairina"></a>
+        <a href="{{url_for('main.feed')}}" > <img src="{{ url_for('static', filename='/img/texto_logo_2.png') }}" class="txt_icon" alt="icono de cairina"></a>
+
+
+        <a href="{{url_for('main.notificaciones')}}" id="btn_notification"><i class="fas fa-bell"></i></a>
+        <a href="{{url_for('main.index')}}" id="btn_logout"><i class="fas fa-sign-out-alt"></i></a>
+        <a href="{{url_for('main.mensajes')}}" id="btn_message"> <i class="fas fa-envelope"></i></a>
+        <a href="{{url_for('main.perfil_user')}}" id="btn_user"><i class=" fas fa-user-circle"></i></i></a>
+         <!-- En el div barra_estado se usan anchors en forma de botones para utilizar iconos de fontawesome
+        es necesario tener las carpetas "svgs y webfonts" dentro del proyecto para que funcionen y utilizar un link como 
+        se muestra en la linea 10 .....En la clase wrapper se encuenta todo lo relacionado a la barra de busqueda-->
+      
+    </div>
+
+    <div class="nav_menu">
+        <a href="{{url_for('main.feed')}}">Inicio</a> | 
+
+        <a href="{{url_for('main.post')}}">Nuevo Post</a> |   
+
+        <a href="{{url_for('main.explorar')}}">Explorar</a> | 
+
+        <a href="{{url_for('main.relacionate')}}">Relacionate</a>
+
+    </div>
+    <h3 class="amigos">Tus amigos estan aquí</h3>
+
+    <div class="resultado_busqueda"> <!--""-->
+        <img src="../static/img/post _amigos.jpg" alt="foto de varias personas tomandose una selfie">
+        <img src="../static/img/post _fut.jpg" alt="foto de hombre jugando futbol">
+        <img src="../static/img/post _dann.jpg" alt="foto de mujer en la playa">
+    </div>
+    <div class="footer">
+        <div class="footer-links">
+
+          <a href="#">Terms of Use</a> | 
+
+          <a href="#">Privacy Policy</a> | 
+
+          <a href="#">Developers</a> | 
+
+          <a href="#">Contact</a> | 
+
+          <a href="#">About</a>
+          <h3>Copyright © Company - All rights reserved</h3>
+        </div>   
+        
+               
+    </div>
+    <script src="../static/js/buscador.js"> </script>
+</body>
+
+
+
+</html>
+
+
+----------------------------------------------nueno post----------------------------
+<html>
+    <head> 
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/post.css') }}">
+        <title> username V (@username)| Fotos y videos de Cairina Moschata </title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" media="screen" href="../static/css/feed.css" />
+        <link rel="stylesheet" href="../static/fontawasome/css/all.min.css">
+        <script src="https://kit.fontawesome.com/25598d9e09.js" crossorigin="anonymous"></script>
+        <link rel="shortcut icon"  href="../static/img/favicon.png"> 
+
+    </head>
+
+    <body>
+        <div id ="barra_estado"> 
+        
+            <div id="ctn-bars-search"> <!--search-input-->
+                <a href="" target="_blank" hidden></a>
+                    <input type="text" id="inputSearch" placeholder="¿buscas a alguien? Escribe su nombre aquí" > <!--id="inputSearch"-->
+                    
+                    <div id="ctn-icon-search"> <!--<a href="{{url_for('main.resultados')}}">--><i class="fas fa-search" id="icon-search"></i></a> <!--id="icon-search"-->
+                    </div>
+                    <ul id ="box-search"> 
+                        <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> luisa</a></a></li>
+                        <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> leo</a></a></li>
+                        <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> shakira</a></a></li>
+                        <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> marco</a></a></li>
+                        <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> daniela</a></a></li>
+                        <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> jbalvin</a></a></li>
+                        
+                    </ul>
+                    <!--<div class="icon"><i class="fas fa-search"></i></div>-->
+                </div>
+        
+           
+            <!--<h2 class="icon_text">Cairina Moschata</h2> cambiar imagen a una con icono y letras-->
+            <a href="{{url_for('main.feed')}}" > <img src="{{ url_for('static', filename='/img/icon_cairina.jpg') }}" class="btn_icon" alt="icono de cairina"></a>
+            <a href="{{url_for('main.feed')}}" > <img src="{{ url_for('static', filename='/img/texto_logo_2.png') }}" class="txt_icon" alt="icono de cairina"></a>
+        
+        
+            <a href="{{url_for('main.notificaciones')}}" id="btn_notification"><i class="fas fa-bell"></i></a>
+            <a href="{{url_for('main.index')}}" id="btn_logout"><i class="fas fa-sign-out-alt"></i></a>
+            <a href="{{url_for('main.mensajes')}}" id="btn_message"> <i class="fas fa-envelope"></i></a>
+            <a href="{{url_for('main.perfil_user')}}" id="btn_user"><i class=" fas fa-user-circle"></i></i></a>
+             <!-- En el div barra_estado se usan anchors en forma de botones para utilizar iconos de fontawesome
+            es necesario tener las carpetas "svgs y webfonts" dentro del proyecto para que funcionen y utilizar un link como 
+            se muestra en la linea 10 .....En la clase wrapper se encuenta todo lo relacionado a la barra de busqueda-->
+          
+        </div>
+        <!-- ESTE CSS ESTA UNIDO AL FEED.CSS POR EL CAMBIO QUE HICIERON AL CÓDIGO  -->
+        <br>
+        <br>
+
+        <div>
+            <h4 id=mapa> 
+            <a href="/feed/">Inicio </a>
+            <a href="/user_profile/">Perfil  </a>
+            <a href="/user_profile/">Editar  </a>
+            <a href="/new_post/">Nuevo post  </a></h4>
+        
+
+            
+            <h1 id="titcrear" style= "background-color: whitesmoke; color:#460259; text-align: center;"> Crea un Nuevo Post Aquí </h1> 
+        </div>
+
+        <div class="contenedor">
+            <div class="userimg1">
+                    <img id=fotoperfil src="../static/img/perfil.jpg" style= "width:200px; height:200px">
+                </div>
+            <div class="userimg2">
+                    <img id=fotocamara src="../static/img/iconocamara.png" style= "width:260px; height:200px; ">                    
+            </div>
+
+            <div class=centrado id="post"></div>
+                <p style="text-align: center;">
+                    Sube una imagen:<input type="file" name="imagensubida" accept="image/png, .jpeg, .jpg, image/gif">
+                    <input type="submit" value="Enviar datos">
+                    <input type="hidden" name="escondido"/> 
+                </p> 
+
+            </div>
+
+            <br>
+            <div class="textoComentario">
+            <textarea name="mitextarea" id="mitextarea" cols="60" rows="9" style="resize: both;"> Agrega aquí tu comentario</textarea><br>
+            <button type="submit" value="Crear"> Crear </button>
+        </div>
+        
+        <script src="../static/js/buscador.js"> </script>
+    </body>
+  
+</html>
+
+-------------------------------cambiar pass ---------------------------------------------------
+<html>
+    <head> 
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/password.css') }}">
+        <title> username V (@username)| Fotos y videos de Cairina Moschata </title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" media="screen" href="../static/css/feed.css" />
+        <link rel="stylesheet" href="../static/fontawasome/css/all.min.css">
+        <script src="https://kit.fontawesome.com/25598d9e09.js" crossorigin="anonymous"></script>
+    </head>
+    <body> 
+        
+        <div id ="barra_estado"> 
+        
+            <div id="ctn-bars-search"> <!--search-input-->
+                <a href="" target="_blank" hidden></a>
+                    <input type="text" id="inputSearch" placeholder="¿buscas a alguien? Escribe su nombre aquí" > <!--id="inputSearch"-->
+                    
+                    <div id="ctn-icon-search"> <!--<a href="{{url_for('main.resultados')}}">--><i class="fas fa-search" id="icon-search"></i></a> <!--id="icon-search"-->
+                    </div>
+                    <ul id ="box-search"> 
+                        <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> luisa</a></a></li>
+                        <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> leo</a></a></li>
+                        <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> shakira</a></a></li>
+                        <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> marco</a></a></li>
+                        <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> daniela</a></a></li>
+                        <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> jbalvin</a></a></li>
+                        
+                    </ul>
+                    <!--<div class="icon"><i class="fas fa-search"></i></div>-->
+                </div>
+        
+           
+            <!--<h2 class="icon_text">Cairina Moschata</h2> cambiar imagen a una con icono y letras-->
+            <a href="{{url_for('main.feed')}}" > <img src="{{ url_for('static', filename='/img/icon_cairina.jpg') }}" class="btn_icon" alt="icono de cairina"></a>
+            <a href="{{url_for('main.feed')}}" > <img src="{{ url_for('static', filename='/img/texto_logo_2.png') }}" class="txt_icon" alt="icono de cairina"></a>
+        
+        
+            <a href="{{url_for('main.notificaciones')}}" id="btn_notification"><i class="fas fa-bell"></i></a>
+            <a href="{{url_for('main.index')}}" id="btn_logout"><i class="fas fa-sign-out-alt"></i></a>
+            <a href="{{url_for('main.mensajes')}}" id="btn_message"> <i class="fas fa-envelope"></i></a>
+            <a href="{{url_for('main.perfil_user')}}" id="btn_user"><i class=" fas fa-user-circle"></i></i></a>
+             <!-- En el div barra_estado se usan anchors en forma de botones para utilizar iconos de fontawesome
+            es necesario tener las carpetas "svgs y webfonts" dentro del proyecto para que funcionen y utilizar un link como 
+            se muestra en la linea 10 .....En la clase wrapper se encuenta todo lo relacionado a la barra de busqueda-->
+          
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div>
+            <h4 id=mapa> 
+                <a href="/feed/">Inicio </a>
+                <a href="/admin_profile/">Perfil  </a>
+                <a href="/user_profile/">Editar perfil  </a>
+                <a href="/new_password/">Cambio de contraseña  </a></h4>
+            <table>
+                <thead>
+                    <tr>
+                        <td>00</td>
+                        <td>00</td>
+                        <td>00</td>
+                    </tr>
+                </thead>
+                <td> Publicaciones </td>
+                <td>  Seguidores  </td>
+                <td>  Seguidos  </td>
+            </table>
+        </div>
+
+        <div class="h2opciones"> 
+            <div class="hlargo">
+                <h3><a href="/user_profile/" class="user_photo"><i id= us2 class="fas fa-user-circle" ></i> Nombre de usuario </a> 
+                </h3>       
+            </div>
+
+        <form name="camContras" method="POST" action=""> 
+        <p> Cambiar contraseña</p>
+        <input id="nom" type="tex" name="nombre" style="width: 460px; height: 30px;">  </p>
+        <p> Activar verificación en dos pasos <sytle= font font-weight bold>  </sytle=>
+            <input id="nombre" type="tex" name="verificarcorreo" style="width: 460px; height: 30px;" style="padding: 20%;"><br> <br>
+            <input id="nombre1" type="tex" name="verificartelefono" style="width: 460px; height: 30px;" style="padding-top: 22%;">  </p> 
+            
+            <p> Verificar correo electrónico <sytle= font font-weight bold>  </sytle=>
+                <input id="nom" type="tex" name="nombre" style="width: 460px; height: 30px;" style="padding: 6%;">
+            
+            <p> Verificar número telefónico <sytle= font font-weight bold>  </sytle=>
+                <input id="nom" type="tex" name="nombre" style="width: 460px; height: 30px;" style="padding: 6%;">
+       
+            <button id="btn"> Activar </button>
+    </body>
+
+</html>

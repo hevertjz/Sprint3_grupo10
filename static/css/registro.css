@@ -93,9 +93,41 @@ label {
     
 }
 
-.enviar_registro{
+.enviar_registro{  /*no esta funcionando ahora mismo*/
+    width: 100%;
+    position: relative;
+    bottom: 10%;
     text-align: center;
-    color: #270140;
-    font-weight: bold;
+    
+
 }
 /*PENDIENTE POR DARLE ESTILOS AL BOTON REGISTRARSE*/
+
+/*btn registro*/
+
+#btn_registrarse
+{
+    height: 50px;
+    width: 95px;
+    background-color: #460259;
+    text-align: center;
+    color: #EDEDED;
+    font-size: 14px;
+    padding: 8px 8px;
+    font-weight: bold;
+    border-radius: 5%;
+    
+   
+}
+
+.btn_volver{
+    width: 150px;    
+    height: 30px;
+    background: #460259;
+    color: #EDEDED;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5%;
+    position: absolute;
+
+} /*agregar este boton externo al principal*/

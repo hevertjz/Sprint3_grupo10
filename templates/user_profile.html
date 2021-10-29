@@ -1,122 +1,67 @@
-<html> 
-    <head>
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/perfil.css') }}">
-        <title> username V (@username)| Fotos y videos de Cairina Moschata </title>
-        <meta charset="UTF-8">
-        <meta name="theme color" content="#C991D8">
-    </head>
+{% extends 'base.html'%}
 
-    <body>
-        <html>
-    <head> 
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/post.css') }}">
-        <title> username V (@username)| Fotos y videos de Cairina Moschata </title>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" media="screen" href="../static/css/feed.css" />
-        <link rel="stylesheet" href="../static/fontawasome/css/all.min.css">
-        <script src="https://kit.fontawesome.com/25598d9e09.js" crossorigin="anonymous"></script>
-    </head>
+{% block estilos %}
+<meta name="theme color" content="#C991D8">
+<link rel="stylesheet" type="text/css" media="screen" href="../static/css/feed.css" />
+<link rel="stylesheet" href="{{ url_for('static', filename='css/perfil.css') }}">
 
-    <body>
-        <div id ="barra_estado"> 
-        
-            <div id="ctn-bars-search"> <!--search-input-->
-                <a href="" target="_blank" hidden></a>
-                    <input type="text" id="inputSearch" placeholder="¿buscas a alguien? Escribe su nombre aquí" > <!--id="inputSearch"-->
-                    
-                    <div id="ctn-icon-search"> <!--<a href="{{url_for('main.resultados')}}">--><i class="fas fa-search" id="icon-search"></i></a> <!--id="icon-search"-->
-                    </div>
-                    <ul id ="box-search"> 
-                        <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> luisa</a></a></li>
-                        <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> leo</a></a></li>
-                        <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> shakira</a></a></li>
-                        <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> marco</a></a></li>
-                        <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> daniela</a></a></li>
-                        <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> jbalvin</a></a></li>
-                        
-                    </ul>
-                    <!--<div class="icon"><i class="fas fa-search"></i></div>-->
-                </div>
-        
-           
-            <!--<h2 class="icon_text">Cairina Moschata</h2> cambiar imagen a una con icono y letras-->
-            <a href="{{url_for('main.feed')}}" > <img src="{{ url_for('static', filename='/img/icon_cairina.jpg') }}" class="btn_icon" alt="icono de cairina"></a>
-            <a href="{{url_for('main.feed')}}" > <img src="{{ url_for('static', filename='/img/texto_logo_2.png') }}" class="txt_icon" alt="icono de cairina"></a>
-        
-        
-            <a href="{{url_for('main.notificaciones')}}" id="btn_notification"><i class="fas fa-bell"></i></a>
-            <a href="{{url_for('main.index')}}" id="btn_logout"><i class="fas fa-sign-out-alt"></i></a>
-            <a href="{{url_for('main.mensajes')}}" id="btn_message"> <i class="fas fa-envelope"></i></a>
-            <a href="{{url_for('main.perfil_user')}}" id="btn_user"><i class=" fas fa-user-circle"></i></i></a>
-             <!-- En el div barra_estado se usan anchors en forma de botones para utilizar iconos de fontawesome
-            es necesario tener las carpetas "svgs y webfonts" dentro del proyecto para que funcionen y utilizar un link como 
-            se muestra en la linea 10 .....En la clase wrapper se encuenta todo lo relacionado a la barra de busqueda-->
-          
-        </div>
-        <br>
-        <br>
-        <br>
-        <br>
-        <div>
-            <h4 id=mapa> 
-            <a href="/feed/">Inicio </a>
-            <a href="/admin_profile/">Perfil  </a>
-            <a href="/user_profile/">Editar  </a> </h4>
-            <table>
-                <thead>
-                    <tr>
-                        <td>00</td>
-                        <td>00</td>
-                        <td>00</td>
-                    </tr>
-                </thead>
-                <td> Publicaciones </td>
-                <td>  Seguidores  </td>
-                <td>  Seguidos  </td>
-            </table>
-        </div>
+{% endblock %}
+<!-- <title> username V (@username)| Fotos y videos de Cairina Moschata </title> -->
 
-        <div class="h2opciones"> 
-            <div class="hlargo">
-                <h3><a href="/user_profile/" class="user_photo"><i id= us1 class="fas fa-user-circle" ></i> Nombre de usuario </a> 
-                </h3>       
-            </div>
+{% block scripts %}
+<script src="https://kit.fontawesome.com/25598d9e09.js" crossorigin="anonymous"></script>
+<script src="js/profile.js"> </script>  
+<script src="../static/js/buscador.js"> </script>
 
-            <div class="textoPerfil">
-                <textarea name="Biografía" cols="80" rows="6" style="resize: both;">Aquí puedes editar tu biografía</textarea>
-            </div>
-        </div>
-        <a href="/user_profile/" class="Edit_Dat"><input type="submit" name=Edit_Text value="Editar datos personales" /> </a> 
+{% endblock %}
+    
 
-        <div class="contenedor"> 
-            <div id="div3">
-                <a href="/user_profile/" class="photo_change"><i id= ch class="far fa-user-circle"></i></a>
-                <input type="file" src="image/image" />
-                <img  name="image"/>
-                <input type="hidden" name="escondido"/>
-                <p type="text" name="Editar foto" name= " Formato jpg máx. 6MB"   style= "color: gray; text-align: right" > </p>
-                
-            </div>
+{% block contenido %} 
+    
+<br>
+<br>
+<br>
+<br>
 
-            <form name="perfilUsuario" method="POST" action=""> 
-                <p>Nombre completo <input type="text" name="nombre" id="nombres" placeholder="Ingrese su nombre completo" style="width: 380px; height: 35px;"></p>   
-                <p>Nombre de usuario: <input type= "text" name="username" id="username"  placeholder="Ingrese un nombre se usuario" style="width: 380px; height: 35px;">  </p>    
-                <p>Sexo: <input type="radio" name="genero" value ="F"/> mujer <input type="radio" name="sexo" value="M" /> hombre</p>
-                <p>Fecha de nacimiento: <input type="date" name="fecha" style="width: 230px; height: 35px;"></p>
-                <p>Nacionalidad:<select> <option>Colombiana</option><option>Afgana</option> <option>Albanesa</option> <option>Argentina</option> <option>Belga</option> <option>Boliviana</option> <option>Brasileña</option><option>Canadiense</option><option>Chilena</option><option>Danesa</option><option>Española</option><option>Estadounidense</option><option>Francesa</option><option>Guatemalteca</option><option>Hondureña</option><option>Indonesa</option> </select> <style width="230px"; height= "35px";></style> </p>
-                <p>Correo: <input type="mail" name="correo" style="width: 330px; height: 35px;"/> </p>
-                <p>Telefono: <input type="number" name= "number"style="width: 230px; height: 35px;"></p>        
-                <p>Organización: <input type="text" name="text" style="width: 230px; height: 35px;"></p>
-                <p>Cambiar tipo de cuemta: <select><option>Personal</option><option>Empresarial</option></select> <style width=260px; heigh=35px;></style> </p>
+<div>
+    <h4 id=mapa> 
+    <a href="/feed/">Inicio </a>
+    <a href="/user_profile/">Perfil  </a>
+    </h4>
+    
+    <table>
+        <thead>
+            <tr>
+                <td>00</td>
+                <td>00</td>
+                <td>00</td>
+            </tr>
+        </thead>
+        <td> Publicaciones </td>
+        <td>  Seguidores  </td>
+        <td>  Seguidos  </td>
+    </table>
+</div>
 
-                <button type="submit" value="Enviar"> Enviar </button>
-            </form> 
-            <a href="/new_password/" class="Edit_Cont"> <button id=btnEditText type="submit"> Cambia tu contraseña</button></a>
-   
-        </div> 
-    </body>
+<div class="h2opciones"> 
+    <div class="hlargo">
+        <h3><a href="/user_profile/" class="user_photo" > <i id= us class="fas fa-user-circle"></i> </a> Nombre de usuario 
+            <p style="position: img/down; text-align: down; font-size: medium; font-weight: bold"> Nombre Completo </p> </h3> </div>
+    <div class="textoPerfil">
+           <p>Aquí se visualiza tu biografía</p>
+    </div>
+    <hr id="lineal">
+</div>
+<a href="/user_profile/"> <button id=btnEditText type="submit"> Edita tu perfil</button></a>
+<br>
+<br>
+<a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> luisa</a>
+<a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> marco</a>
+<div class="imagenes">     
+<img class="img_admin_profile" src="../static/img/Gente seguida.jpg" alt="personas que sigues" style="width: 40%; height: 60%;">
+<img class="img_admin_profile" src="../static/img/Etiquetar personas.jpg" alt="etiquetar personas"style="width: 30%;height: 50%;" >
+<img class="img_admin_profile" src="../static/img/seguir.png" alt="seguir a una persona"style="width: 25%; height: 50%;" >
+</div>
 
-    <script src="js/profile.js"> </script>
-
-
-</html>
+ 
+ {% endblock %}

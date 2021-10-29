@@ -5,7 +5,7 @@ def get_db():
     try:
         if 'db' not in g:
             print('base de datos conectada')
-            g.db = sqlite3.connect('cairinaMoschata.db')
+            g.db = sqlite3.connect('cairina_2.0.db')
             return g.db
     except Error:
         print(Error)

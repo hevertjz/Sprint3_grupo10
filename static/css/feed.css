@@ -56,7 +56,7 @@
     text-align: center;
     color: #ededed;
 }
-
+/* 
 #btn_notification{
     position: absolute;
     right: 7.2%;
@@ -66,17 +66,26 @@
     font-size:35px;
     text-align: center;
     color: #ededed;
-}
+} */
 
 #btn_logout{
     position: absolute;
+    right: 7.2%;
+    top: 5px;
+    cursor: pointer;
+    padding: 5px 12px;
+    font-size:35px;
+    text-align: center;
+    color: #ededed;
+
+    /* position: absolute;
     right: 10%;
     top: 5px;
     cursor: pointer;
     padding: 5px 16px;
     font-size:35px;
     text-align: center;
-    color: #ededed;
+    color: #ededed; */
 
 }
 
@@ -382,27 +391,8 @@ h4{
     top: -27%;
 }
 
-/*vista nuevo post
-   esto es de la vista del nuevo post que esta aqui no sé la razon
-}*/
 
-.userimg1{
-    margin: 1px;
-    display:block;
-}
-.userimg2{
-    text-align: center;
-    display:block;
-    width: 60%;
-    
-}
-.userimg1,.userimg2{
-    display: inline-block;
-}
 
-.textoComentario{
-    text-align: center;
-    display:block;
-    width: 100%;
-    
-}
+
+
+

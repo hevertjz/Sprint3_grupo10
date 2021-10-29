@@ -1,52 +1,16 @@
-<!DOCTYPE html>
-<html lang="sp">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cairina Moschata</title>
-    <link rel="shortcut icon"  href="../static/img/favicon.png">
+
+    {% extends 'base.html'%}
+
+    {% block estilos %}
     <link rel="stylesheet" type="text/css" media="screen" href="../static/css/feed.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="../static/css/espacio.css" />
-    <link rel="stylesheet" href="../static/fontawasome/css/all.min.css">
+
+    {% endblock %}
     
-</head>
-<body>
-    <div id ="barra_estado"> 
-        
-        <div id="ctn-bars-search"> <!--search-input-->
-            <a href="" target="_blank" hidden></a>
-                <input type="text" id="inputSearch" placeholder="¿buscas a alguien? Escribe su nombre aquí" > <!--id="inputSearch"-->
-                
-                <div id="ctn-icon-search"> <!--<a href="{{url_for('main.resultados')}}">--><i class="fas fa-search" id="icon-search"></i></a> <!--id="icon-search"-->
-                </div>
-                <ul id ="box-search"> 
-                    <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> luisa</a></a></li>
-                    <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> leo</a></a></li>
-                    <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> shakira</a></a></li>
-                    <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> marco</a></a></li>
-                    <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> daniela</a></a></li>
-                    <li><a href="{{url_for('main.resultados')}}"><i class="fas fa-search"></i> jbalvin</a></a></li>
-                    
-                </ul>
-                <!--<div class="icon"><i class="fas fa-search"></i></div>-->
-            </div>
-
-       
-        <!--<h2 class="icon_text">Cairina Moschata</h2> cambiar imagen a una con icono y letras-->
-        <a href="{{url_for('main.feed')}}" > <img src="{{ url_for('static', filename='/img/icon_cairina.jpg') }}" class="btn_icon" alt="icono de cairina"></a>
-        <a href="{{url_for('main.feed')}}" > <img src="{{ url_for('static', filename='/img/texto_logo_2.png') }}" class="txt_icon" alt="icono de cairina"></a>
-
-
-        <a href="{{url_for('main.notificaciones')}}" id="btn_notification"><i class="fas fa-bell"></i></a>
-        <a href="{{url_for('main.index')}}" id="btn_logout"><i class="fas fa-sign-out-alt"></i></a>
-        <a href="{{url_for('main.mensajes')}}" id="btn_message"> <i class="fas fa-envelope"></i></a>
-        <a href="{{url_for('main.perfil_user')}}" id="btn_user"><i class=" fas fa-user-circle"></i></i></a>
-         <!-- En el div barra_estado se usan anchors en forma de botones para utilizar iconos de fontawesome
-        es necesario tener las carpetas "svgs y webfonts" dentro del proyecto para que funcionen y utilizar un link como 
-        se muestra en la linea 10 .....En la clase wrapper se encuenta todo lo relacionado a la barra de busqueda-->
-      
-    </div>
+    {% block scripts %}<script src="../static/js/buscador.js"> </script> {% endblock %}
+    
+    {% block contenido %}
+    
 
     <div class="nav_menu">
         <a href="{{url_for('main.feed')}}">Inicio</a> | 
@@ -65,26 +29,6 @@
         <img src="../static/img/post _fut.jpg" alt="foto de hombre jugando futbol">
         <img src="../static/img/post _dann.jpg" alt="foto de mujer en la playa">
     </div>
-    <div class="footer">
-        <div class="footer-links">
-
-          <a href="#">Terms of Use</a> | 
-
-          <a href="#">Privacy Policy</a> | 
-
-          <a href="#">Developers</a> | 
-
-          <a href="#">Contact</a> | 
-
-          <a href="#">About</a>
-          <h3>Copyright © Company - All rights reserved</h3>
-        </div>   
-        
-               
-    </div>
-    <script src="../static/js/buscador.js"> </script>
-</body>
+    {% endblock %}
 
 
-
-</html>

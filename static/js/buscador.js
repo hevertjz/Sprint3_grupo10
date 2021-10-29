@@ -9,7 +9,11 @@ inputSearch = document.getElementById("inputSearch")
 box_search = document.getElementById("box-search");
 
 //funcion para mostrar buscador
+// sql= "select username from Usuario"
+//     db = get_db()
+//     db.execute(sql)
 
+// print(sql)
 
 
 //Creando filtrado de busqueda
